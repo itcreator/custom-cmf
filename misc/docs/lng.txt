@@ -1,0 +1,11 @@
+Процесс загрузки файлов переводов:
+
+1. Поиск в переводах приложения
+\languages\{lngCode}\{path to file}
+2. Поиск в переводах для текущего модуля(Request::getModule())
+\CurrentModuleName\languages\{lngCode}\{path to file}
+3. Поиск для модуля, в котором объявлен класс, для которого нужен перевод
+\ModuleName\languages\{lngCode}\{path to file}
+3.1. Итеративный поиск для классов родителей
+\ParentModuleName\languages\{lngCode}\{path to parent file}
+4. Мерж массивов

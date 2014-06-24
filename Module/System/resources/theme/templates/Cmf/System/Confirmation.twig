@@ -1,0 +1,11 @@
+{%  set lng = lng(object) %}
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h4>{{ object.title }}</h4>
+    </div>
+    <div class="panel-body">
+        <p>{{ object.message }}</p>
+        <a href="{{ object.getUrlYes() }}" class="btn btn-danger">{{ lng.yes }}</a>
+        <a href="{{ object.getUrlNo() }}" class="btn btn-default"> {{ lng.no }}</a>
+    </div>
+</div>

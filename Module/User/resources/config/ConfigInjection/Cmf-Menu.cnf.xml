@@ -1,0 +1,13 @@
+<config>
+    <menu>
+        <main>
+            <Cmf-User>
+                <title>usersMenuTitle</title>
+                <hint>usersMenuHint</hint>
+                <translate>Cmf\User\Controller\UserController</translate>
+                <weight>20</weight>
+                <url module="Cmf\User" controller="User"/>
+            </Cmf-User>
+        </main>
+    </menu>
+</config>

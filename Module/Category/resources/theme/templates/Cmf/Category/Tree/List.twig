@@ -1,0 +1,10 @@
+{% if categories | length %}
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{{ categoriesTree.buildUrl(category.id) }}" title="{{ category.summary }}">{{ category.title }}</a>
+                {{ render(object, {categoriesTree: categoriesTree, categories: category.getChildren()}) }}
+            </li>
+        {% endfor  %}
+    </ul>
+{% endif %}

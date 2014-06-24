@@ -1,0 +1,3 @@
+<config>
+    <adapter>Cmf\Url\Builder\Adapter\Short</adapter>
+</config>

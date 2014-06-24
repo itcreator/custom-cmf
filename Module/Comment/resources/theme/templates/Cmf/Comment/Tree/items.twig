@@ -1,0 +1,24 @@
+{% for comment in comments %}
+    <div class="comment panel panel-default">
+        <div class="panel-heading">
+            <span>{{ comment.userName }}</span>
+            {% if comment.getUser().isGuest() %}<i>({{ lng['guest'] }})</i>{% endif %}
+            <span>:</span> <span>{{ comment.created|date('d.m.Y H:i:s') }}</span>
+            {% if comment.created != comment.updated %}
+                {{ lng['updated'] }}: <span>{{ comment.created|date('d.m.Y H:i:s') }}</span>
+            {% endif %}
+        </div>
+        <div class="comment panel-body">
+            {{ comment.text }}<br />
+            <br />
+            {{ render(actionLinks[comment.id]) }}
+            {% set children = comment.children %}
+            {% if children|length %}
+                <div class="space3"></div>
+                <div>
+                    {{ render(object, {comments: children, actionLinks: actionLinks, lng: lng}) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

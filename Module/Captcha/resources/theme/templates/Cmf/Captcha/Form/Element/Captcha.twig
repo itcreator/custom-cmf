@@ -1,0 +1,15 @@
+{% set attr = object.getAttributes().setItem('form-control', 'class') %}
+<div class="form-group{% if object.isBroken() %} has-error{% endif %}">
+	<table><tr>
+		<td>
+            {% if object.title %}
+                <label class="control-label">{{ object.title }}
+                    {% if object.required %}<span class="required">*</span>{% endif %}
+                </label>
+            {% endif %}
+			<{{ object.tagName }}{{ render(object.attributes) }} />
+		</td>
+		<td><img src="{{ object.imagePath }}" /></td>
+	</tr></table>
+    {{ render(object.messages) }}
+</div>

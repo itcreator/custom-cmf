@@ -1,0 +1,5 @@
+<config>
+    <resources>
+        <Twitter-Bootstrap>vendor/twitter/bootstrap/dist/</Twitter-Bootstrap>
+    </resources>
+</config>

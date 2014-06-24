@@ -1,0 +1,88 @@
+<config>
+    <menu>
+        <main>
+            <!--Menu items example-->
+            <!---->
+            <!--<Item1 type="Link" enabled="0">-->
+                <!--<title>Item 1</title>-->
+                <!--<hint>Item 1 hint</hint>-->
+                <!--<weight>10</weight>-->
+                <!--<url module="Cmf\User" controller="User"/>-->
+            <!--</Item1>-->
+            <!--<Item2 enabled="false">-->
+                <!--<title>Item 2</title>-->
+                <!--<hint>Item 2 hint</hint>-->
+                <!--<weight>30</weight>-->
+                <!--<url>http://itcreator.net/</url>-->
+                <!--<target>blank</target>-->
+            <!--</Item2>-->
+            <!--<Submenu1>-->
+                <!--<translate>User\Controller\UserController</translate>-->
+                <!--<weight>20</weight>-->
+                <!--<title>Submenu example</title>-->
+                <!--<url>javascript:void(0)</url>-->
+                <!--<menu>-->
+                    <!--<new>-->
+                        <!--<title>Submenu item 1</title>-->
+                        <!--<hint>Submenu item 1</hint>-->
+                        <!--<url module="Cmf\Article" controller="Article"/>-->
+                    <!--</new>-->
+                    <!--<a>-->
+                        <!--<title>Submenu item 2</title>-->
+                        <!--<hint>Submenu item 2</hint>-->
+                        <!--<url module="Cmf\Article" controller="Article"/>-->
+                    <!--</a>-->
+                    <!--<Separator type="Separator"/>-->
+                    <!--<b type="Link">-->
+                        <!--<title>Submenu item 3</title>-->
+                        <!--<hint>Submenu item 3</hint>-->
+                        <!--<url module="Cmf\Article" controller="Article"/>-->
+                        <!--<menu>-->
+                            <!--<c type="Link">-->
+                                <!--<title>Submenu item 3.1</title>-->
+                                <!--<hint>Submenu item 3.1</hint>-->
+                                <!--<weight>1</weight>-->
+                                <!--<url module="Cmf\Article" controller="Article"/>-->
+                            <!--</c>-->
+                            <!--<d type="Link">-->
+                                <!--<title>Submenu item 3.2</title>-->
+                                <!--<hint>Submenu item 3.2</hint>-->
+                                <!--<weight>5</weight>-->
+                                <!--<url module="Cmf\Article" controller="Article"/>-->
+                                <!--<menu>-->
+                                    <!--<c type="Link">-->
+                                        <!--<title>Submenu item 3.2.1</title>-->
+                                        <!--<hint>Submenu item 3.2.1</hint>-->
+                                        <!--<url module="Cmf\Article" controller="Article"/>-->
+                                    <!--</c>-->
+                                    <!--<d type="Link">-->
+                                        <!--<title>Submenu item 3.2.2</title>-->
+                                        <!--<hint>Submenu item 3.2.2</hint>-->
+                                        <!--<url module="Article" controller="Article"/>-->
+                                    <!--</d>-->
+                                    <!--<e type="Link">-->
+                                        <!--<title>Submenu item 3.2.3</title>-->
+                                        <!--<hint>Submenu item 3.2.3</hint>-->
+                                        <!--<url module="Article" controller="Article"/>-->
+                                    <!--</e>-->
+                                <!--</menu>-->
+                            <!--</d>-->
+                            <!--<e type="Link">-->
+                                <!--<title>Submenu item 3.3</title>-->
+                                <!--<hint>Submenu item 3.3</hint>-->
+                                <!--<weight>2</weight>-->
+                                <!--<url module="Cmf\Article" controller="Article"/>-->
+                            <!--</e>-->
+                        <!--</menu>-->
+                    <!--</b>-->
+                <!--</menu>-->
+            <!--</Submenu1>-->
+            <!--<Item3 type="Link">-->
+                <!--<title>Item 1</title>-->
+                <!--<hint>Item 1 hint</hint>-->
+                <!--<weight>15</weight>-->
+                <!--<url module="Cmf\User" controller="User"/>-->
+            <!--</Item3>-->
+        </main>
+    </menu>
+</config>

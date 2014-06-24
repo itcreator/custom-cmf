@@ -1,0 +1,9 @@
+{% set lng = lng(object) %}
+{% if not error %}
+	{{ lng.redirectTo }}: <a href="{{ path|raw }}">{{ path|raw }}</a>
+<script>
+	window.location.href="{{ path|raw }}";
+</script>
+{% else %}
+	<b style="color:red">{{ error }}</b>
+{% endif %}

@@ -1,0 +1,28 @@
+<config>
+    <Cmf-Db>
+        <Cmf-Article/>
+        <Cmf-Block/>
+        <Cmf-Category/>
+        <Cmf-User/>
+        <Cmf-Permission/>
+    </Cmf-Db>
+    <Cmf-System>
+        <Cmf-Permission/>
+    </Cmf-System>
+    <Cmf-Permission>
+        <Cmf-Article/>
+        <Cmf-Captcha/>
+        <Cmf-Error/>
+        <Cmf-Index/>
+        <Cmf-User/>
+    </Cmf-Permission>
+    <Cmf-PublicResources>
+        <Cmf-Menu/>
+        <Cmf-Comment/>
+    </Cmf-PublicResources>
+    <Cmf-Menu>
+        <Cmf-Article/>
+        <Cmf-Index/>
+        <Cmf-User/>
+    </Cmf-Menu>
+</config>

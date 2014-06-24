@@ -1,0 +1,45 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-Article>
+                <permission type="allow" />
+                <controller>
+                    <Article>
+                        <action>
+                            <edit>
+                                <permission type="deny" role="guest" />
+                            </edit>
+                            <delete>
+                                <permission type="deny" role="guest" />
+                            </delete>
+                        </action>
+                    </Article>
+                    <Category>
+                        <action>
+                            <initroot>
+                                <permission type="deny"/>
+                                <permission type="allow" role="admin"/>
+                            </initroot>
+                        </action>
+                    </Category>
+                    <Comment>
+                        <action>
+                            <initroot>
+                                <permission type="deny"/>
+                                <permission type="allow" role="admin"/>
+                            </initroot>
+                            <edit>
+                                <permission type="deny"/>
+                                <permission type="allow" role="admin"/>
+                            </edit>
+                            <delete>
+                                <permission type="deny"/>
+                                <permission type="allow" role="admin"/>
+                            </delete>
+                        </action>
+                    </Comment>
+                </controller>
+            </Cmf-Article>
+        </module>
+    </acl>
+</config>

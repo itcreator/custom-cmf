@@ -1,0 +1,5 @@
+<config>
+    <actionLink>
+        <configClass>Cmf\Comment\Model\ActionLink\CommentConfig</configClass>
+    </actionLink>
+</config>

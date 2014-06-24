@@ -1,0 +1,3 @@
+<config>
+	<engine>Cmf\View\Engine\Twig</engine>
+</config>

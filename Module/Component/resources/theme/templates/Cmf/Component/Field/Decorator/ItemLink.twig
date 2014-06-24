@@ -1,0 +1,6 @@
+{% set url = object.url %}
+{% if object.isCurrentUrl(url) %}
+    {{ object.field.value }}
+{% else %}
+    <a href="{{ url }}">{{ object.field.value }}</a>
+{% endif %}

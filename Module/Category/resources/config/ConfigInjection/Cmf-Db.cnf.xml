@@ -1,0 +1,7 @@
+<config>
+    <filter>
+        <category-root-filter>
+            <class>Cmf\Category\Db\Filter\CategoryRootFilter</class>
+        </category-root-filter>
+    </filter>
+</config>

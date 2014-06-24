@@ -1,0 +1,5 @@
+<config>
+    <entityPath>
+        <Cmf-Block>/Module/Block/src/Cmf/Block/Model/Entity</Cmf-Block>
+    </entityPath>
+</config>

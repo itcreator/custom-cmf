@@ -1,0 +1,10 @@
+<tr{% if id %} row_id="{{ id }}" {% endif %}>
+    {%for field in object.fields %}
+        <td>{{ render(field) }}</td>
+    {% endfor %}
+
+    {% set links = object.actionLinks %}
+    {% if links %}
+        <td>{{ render(links) }}</td>
+    {% endif %}
+</tr>

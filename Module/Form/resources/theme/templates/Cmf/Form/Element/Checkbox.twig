@@ -1,0 +1,12 @@
+<div class="form-group{% if object.isBroken() %} has-error{% endif %}">
+    <div class="checkbox">
+        <{{ object.tagName }} {{ render(object.attributes) }} />
+        {% if object.title %}
+            <label class="control-label optional inline">
+                {{ object.title }}
+                {% if object.required %}<span class="required">*</span>{% endif %}
+            </label>
+        {% endif %}
+    </div>
+    {{ render(object.messages) }}
+</div>

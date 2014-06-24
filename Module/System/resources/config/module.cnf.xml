@@ -1,0 +1,19 @@
+<config>
+    <dateTime>
+        <dateFormat>d.m.Y</dateFormat>
+        <timeFormat>d.m.Y H:i:s</timeFormat>
+    </dateTime>
+    <event>
+        <!-- Examples -->
+        <!--<listener class="Cmf\Permission\Listener\ActionAccess" />-->
+        <!--<listener class="Cmf\Permission\Listener\CrudAccess" />-->
+    </event>
+    <module>
+        <defaultModule>Cmf\Index</defaultModule>
+        <defaultController>Index</defaultController>
+        <defaultAction>default</defaultAction>
+    </module>
+    <site>
+        <siteTitle>Супер мего CMF</siteTitle>
+    </site>
+</config>

@@ -1,0 +1,9 @@
+{% for field in object.headerFields %}
+<th>
+	{% if field.sortable %}
+		<a href="{{ field.url }}">{{ field.title }}</a>
+	{% else %}
+		{{ field.title }}
+	{% endif %}
+</th>
+{% endfor %}

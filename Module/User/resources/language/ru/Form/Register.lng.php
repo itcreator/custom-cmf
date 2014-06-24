@@ -1,0 +1,4 @@
+<?php
+return [
+    'registerBtnTitle' => 'Зарегистрироваться',
+];

@@ -1,0 +1,11 @@
+<config>
+    <actionLink>
+        <configClass>Cmf\Article\Model\ActionLink\ArticleConfig</configClass>
+    </actionLink>
+    <field>
+        <configClass>Cmf\Article\Model\Field\ArticleFieldConfig</configClass>
+    </field>
+    <categoryField>
+        <configClass>Cmf\Article\Model\Field\CategoryFieldConfig</configClass>
+    </categoryField>
+</config>

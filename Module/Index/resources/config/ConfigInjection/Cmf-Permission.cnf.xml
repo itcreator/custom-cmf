@@ -1,0 +1,9 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-Index>
+                <permission type="allow" />
+            </Cmf-Index>
+        </module>
+    </acl>
+</config>

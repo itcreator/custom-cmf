@@ -1,0 +1,13 @@
+<config>
+    <menu>
+        <main>
+            <Index>
+                <title>indexMenuTitle</title>
+                <hint>indexMenuHint</hint>
+                <translate>Cmf\Index\Controller\IndexController</translate>
+                <weight>0</weight>
+                <url module="Cmf\Index" controller="Index"/>
+            </Index>
+        </main>
+    </menu>
+</config>

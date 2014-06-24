@@ -1,0 +1,13 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-System>
+                <controller>
+                    <Redirect>
+                        <permission type="allow" />
+                    </Redirect>
+                </controller>
+            </Cmf-System>
+        </module>
+    </acl>
+</config>

@@ -1,0 +1,8 @@
+<config>
+    <actionLink>
+        <configClass>Cmf\User\Model\ActionLink\UserConfig</configClass>
+    </actionLink>
+    <field>
+        <configClass>Cmf\User\Model\Field\UserFieldConfig</configClass>
+    </field>
+</config>

@@ -1,0 +1,11 @@
+<ul class="list-inline">
+    {% for category in object.field.value %}
+        <li>
+            {% if object.isCurrentUrl(object.url(category)) %}
+                {{ category.title }}
+            {% else %}
+                <a href="{{ object.url(category) }}">{{ category.title }}</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

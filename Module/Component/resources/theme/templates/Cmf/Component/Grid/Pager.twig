@@ -1,0 +1,15 @@
+{%  set lng = lng(object) %}
+{%  set data = object.pagerData %}
+{% if object.pagesCount > 1 %}
+    <ul class="pagination">
+        {% if (data.prevPageHref) %}<li><a href="{{ data.prevPageHref }}">&larr;</a></li>{% endif %}
+        {% for item in data.pagesArray %}
+            {% if item.type=='current' %}<li class="active"><span>{{ item.text }}</span></li>{% endif %}
+            {% if item.type=='link' %}<li><a href="{{ item.href }}">{{ item.text }}</a></li>{% endif %}
+            {% if item.type=='separator' %}<li class="disabled"><span>...</span></li>{% endif %}
+        {% endfor %}
+        {% if data.nextPageHref %}<li><a href="{{ data.nextPageHref }}">&rarr;</a></li>{% endif %}
+        {#<li class="disabled"><span>&nbsp;</span></li>#}
+        <li class="disabled"><span>{{ object.itemsCountPerPage }} {{ lng.perPage }}</span></li>
+    </ul>
+{% endif %}

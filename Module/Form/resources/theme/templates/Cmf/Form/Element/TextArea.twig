@@ -1,0 +1,10 @@
+{% set attr = object.getAttributes().setItem('form-control', 'class') %}
+<div class="form-group{% if object.isBroken() %} has-error{% endif %}">
+    {% if object.title %}
+        <label class="control-label">{{ object.title }}
+            {% if object.required %}<span class="required">*</span>{% endif %}
+        </label>
+    {% endif %}
+    <{{ object.tagName }}{{ render(object.attributes) }} >{{ object.value }}</{{ object.tagName }}>
+    {{ render(object.messages) }}
+</div>

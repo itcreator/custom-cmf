@@ -1,0 +1,7 @@
+
+bin/console orm:generate-proxies					- сгенерировать прокси
+bin/console orm:schema-tool:update --force 					- сгенерировать БД
+bin/console orm:validate-schema						- валидация схемы
+
+COMPOSER_PROCESS_TIMEOUT=40000 php composer.phar update - обновить зависимости
+composer.phar self-update - обновить сам composer

@@ -1,0 +1,21 @@
+{% set lng = lng(object) %}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>{{ render(fields.getItem('userName')) }}</h1>
+        </div>
+        <div class="panel-body">
+            <p>
+                {{ render(fields.getItem('lastName')) }}
+                {{ render(fields.getItem('firstName')) }}
+                {{ render(fields.getItem('fatherName')) }}
+            </p>
+            <p>
+                {{ lng.status }}: {{ render(fields.getItem('status')) }}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    {{ render(actionLinks) }}
+</div>

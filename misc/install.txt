@@ -1,0 +1,5 @@
+ - CREATE DATABASE custom_cmf DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+ - composer install
+ - configure resources/config/ConfigInjection.Cmf-Db.cnf.xml
+ - bin/console orm:schema-tool:update --force
+ - run sql script custom_cmf.sql

@@ -1,0 +1,5 @@
+<config>
+    <entityPath>
+        <Cmf-User>/Module/User/src/Cmf/User/Model/Entity</Cmf-User>
+    </entityPath>
+</config>

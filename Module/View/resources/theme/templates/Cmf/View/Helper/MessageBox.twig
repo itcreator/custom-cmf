@@ -1,0 +1,9 @@
+{% if messages | length %}
+	<div class="form-messages-block">
+	{% for item in messages %}
+		<div class="alert alert-{{ item.type }}">
+			{{ item.getMessage }}
+		</div>
+	{% endfor %}
+	</div>
+{% endif %}

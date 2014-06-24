@@ -1,0 +1,8 @@
+<config>
+    <connection>
+        <path>localhost</path>
+        <dbname>custom_cmf</dbname>
+        <user>root</user>
+        <password>1</password>
+    </connection>
+</config>

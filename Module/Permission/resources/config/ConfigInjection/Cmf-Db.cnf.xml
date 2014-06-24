@@ -1,0 +1,5 @@
+<config>
+    <entityPath>
+        <Cmf-Permission>/Module/Permission/src/Cmf/Permission/Model/Entity</Cmf-Permission>
+    </entityPath>
+</config>

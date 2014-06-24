@@ -1,0 +1,12 @@
+<config>
+    <width>300</width>
+    <height>70</height>
+    <pathToDigits>Module/Captcha/resources/files/digits/</pathToDigits>
+    <bgRed>200</bgRed>
+    <bgGreen>255</bgGreen>
+    <bgBlue>200</bgBlue>
+    <colorRed>00</colorRed>
+    <colorGreen>00</colorGreen>
+    <colorBlue>0</colorBlue>
+    <rndLines>30</rndLines>
+</config>

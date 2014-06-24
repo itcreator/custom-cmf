@@ -1,0 +1,11 @@
+{% set messages = object.messages %}
+{% if messages | length %}
+    {% for item in messages %}
+        <div class="alert alert-{{ item.type }}">
+            {{ item.message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% for element in object.elements %}
+    {{ render(element) }}
+{% endfor %}

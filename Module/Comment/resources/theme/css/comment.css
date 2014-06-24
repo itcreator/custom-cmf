@@ -1,0 +1,12 @@
+.comment.panel {
+    margin-bottom: 3pt;
+}
+
+.comment.panel div.comment.panel-body {
+    padding-bottom: 3pt!important;
+}
+
+div.space3 {
+    width: 100%;
+    height: 3pt;
+}

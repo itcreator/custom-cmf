@@ -1,0 +1,8 @@
+<div class="table-responsive">
+    <table class="table  table-striped">
+        <tr>{{ render(object.header) }}</tr>
+        {% for row in object.rows %}
+            {{ render(row) }}
+        {% endfor %}
+    </table>
+</div>

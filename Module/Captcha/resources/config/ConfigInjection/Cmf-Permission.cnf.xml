@@ -1,0 +1,9 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-Captcha>
+                <permission type="allow" />
+            </Cmf-Captcha>
+        </module>
+    </acl>
+</config>

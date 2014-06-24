@@ -1,0 +1,7 @@
+{% if object | length %}
+    {% for item in object %}
+        <p class="text-{{ item.type }}">
+            {{ item.message }}
+        </p>
+    {% endfor %}
+{% endif %}

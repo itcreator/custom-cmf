@@ -1,0 +1,25 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-User>
+                <permission type="allow" role="user"/>
+                <controller>
+                    <Login>
+                        <permission type="allow" role="guest" />
+                    </Login>
+                    <Register>
+                        <permission type="allow" role="guest" />
+                    </Register>
+                    <User>
+                        <permission type="allow" role="admin" />
+                        <action>
+                            <delete>
+                                <permission type="allow" role="admin" />
+                            </delete>
+                        </action>
+                    </User>
+                </controller>
+            </Cmf-User>
+        </module>
+    </acl>
+</config>

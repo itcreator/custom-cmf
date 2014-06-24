@@ -1,0 +1,6 @@
+<config>
+    <event>
+        <listener class="Cmf\Permission\Listener\ActionAccess" />
+        <listener class="Cmf\Permission\Listener\CrudAccess" />
+    </event>
+</config>

@@ -1,0 +1,14 @@
+{% set lng = lng(object) %}
+<div class="container">
+    <div class="space10"></div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{ lng.comments }}</div>
+        <div class="panel-body">
+            {% if object.comments %}
+                {{ render('Cmf/Comment/Tree/items', {comments: object.comments, actionLinks: object.actionLinks, lng: lng}) }}
+            {% else %}
+                {{ lng.noComments }}
+            {% endif %}
+        </div>
+    </div>
+</div>

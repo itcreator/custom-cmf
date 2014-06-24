@@ -1,0 +1,19 @@
+{% set style = this.getHelper('Style')
+    .addStyle('css/bootstrap.css', 'Twitter/Bootstrap')
+    .addStyle('css/bootstrap-theme.css', 'Twitter/Bootstrap')
+%}
+
+<div class="page-header">
+    {{ blockContainer('top') }}
+</div>
+
+{% autoescape false %}
+    {{ this.getHelper('MessageBox').render() }}
+    {{ content }}
+{% endautoescape %}
+
+<footer>
+    <div class="container">
+        footer
+    </div>
+</footer>

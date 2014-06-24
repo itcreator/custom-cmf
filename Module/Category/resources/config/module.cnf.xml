@@ -1,0 +1,5 @@
+<config>
+    <actionLink>
+        <configClass>Cmf\Category\Model\ActionLink\CategoryConfig</configClass>
+    </actionLink>
+</config>

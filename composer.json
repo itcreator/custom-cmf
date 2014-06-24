@@ -1,0 +1,83 @@
+{
+    "name": "custom-cmf/cmf",
+    "version": "dev",
+    "keywords": ["cmf", "cms", "framework", "php"],
+    "authors": [
+        {
+            "name": "Vital Leshchyk",
+            "email": "vitalleshchyk@gmail.com",
+            "role": "Project Founder"
+        }
+    ],
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-0": {
+            "Cmf\\Application\\": "Module/Application/src/",
+            "Cmf\\Article\\": "Module/Article/src/",
+            "Cmf\\Block\\": "Module/Block/src/",
+            "Cmf\\Captcha\\": "Module/Captcha/src/",
+            "Cmf\\Category\\": "Module/Category/src/",
+            "Cmf\\Comment\\": "Module/Comment/src/",
+            "Cmf\\Component\\": "Module/Component/src/",
+            "Cmf\\Controller\\": "Module/Controller/src/",
+            "Cmf\\Config\\": "Module/Config/src/",
+            "Cmf\\Data\\": "Module/Data/src/",
+            "Cmf\\Db\\": "Module/Db/src/",
+            "Cmf\\Debug\\": "Module/Debug/src/",
+            "Cmf\\Error\\": "Module/Error/src/",
+            "Cmf\\Event\\": "Module/Event/src/",
+            "Cmf\\Form\\": "Module/Form/src/",
+            "Cmf\\GedmoExtension\\": "Module/GedmoExtension/src/",
+            "Cmf\\Index\\": "Module/Index/src/",
+            "Cmf\\Language\\": "Module/Language/src/",
+            "Cmf\\Mail\\": "Module/Mail/src/",
+            "Cmf\\Menu\\": "Module/Menu/src/",
+            "Cmf\\Module\\": "Module/Module/src/",
+            "Cmf\\Standard\\": "Module/Standard/src/",
+            "Cmf\\Structure\\": "Module/Structure/src/",
+            "Cmf\\System\\": "Module/System/src/",
+            "Cmf\\Permission\\": "Module/Permission/src/",
+            "Cmf\\PublicResources\\": "Module/PublicResources/src/",
+            "Cmf\\Url\\": "Module/Url/src/",
+            "Cmf\\User\\": "Module/User/src/",
+            "Cmf\\View\\": "Module/View/src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.3",
+        "doctrine/orm": ">=2.4.0,<2.5.0-dev",
+        "firephp/firephp-core": "dev-master",
+        "frameworks/jquery": "dev-master",
+        "gedmo/doctrine-extensions": "dev-master",
+        "smarty/smarty": ">=v3.1.15",
+        "twig/twig": "1.*",
+        "twitter/bootstrap": "3.1.*@dev",
+        "zendframework/zend-config": ">=2.2.4",
+        "zendframework/zend-eventmanager": ">=2.2.4",
+        "zendframework/zend-mail": ">=2.2.4",
+        "zendframework/zend-code": ">=2.2.4",
+        "zendframework/zend-permissions-acl": ">=2.2.4",
+        "zendframework/zend-servicemanager": ">=2.2.4",
+        "zendframework/zend-validator": ">=2.2.4"
+    },
+    "include-path": ["vendor/doctrine/orm/lib", "."],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "Cmf\\Application\\Composer\\Script::installApp",
+            "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\PublicResources\\Composer\\Script::installAssets"
+        ],
+        "post-update-cmd": [
+            "Cmf\\Application\\Composer\\Script::installApp",
+            "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\PublicResources\\Composer\\Script::installAssets"
+        ]
+    }
+}

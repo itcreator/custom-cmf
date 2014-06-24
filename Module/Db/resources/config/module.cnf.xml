@@ -1,0 +1,35 @@
+<config>
+    <connection>
+        <!-- rewrite this parameters in config injection -->
+        <driver>pdo_mysql</driver>
+        <charset>utf8</charset>
+        <path>localhost</path>
+        <dbname>***</dbname>
+        <user>db_user_name</user>
+        <password>password</password>
+    </connection>
+    <entityPath>
+        <!--<Article>/Module/Article/Model/Entity</Article>-->
+        <!--<Block>/Module/Block/Model/Entity</Block>-->
+        <!--<User>/Module/User/Model/Entity</User>-->
+    </entityPath>
+    <filter>
+        <gedmo-soft-deleteable>
+            <class>Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter</class>
+        </gedmo-soft-deleteable>
+    </filter>
+    <eventListener>
+        <gedmo-sluggable>
+            <class>Gedmo\Sluggable\SluggableListener</class>
+        </gedmo-sluggable>
+        <gedmo-tree>
+            <class>Gedmo\Tree\TreeListener</class>
+        </gedmo-tree>
+        <gedmo-time-stampable>
+            <class>Gedmo\Timestampable\TimestampableListener</class>
+        </gedmo-time-stampable>
+        <gedmo-soft-delete>
+            <class>Gedmo\SoftDeleteable\SoftDeleteableListener</class>
+        </gedmo-soft-delete>
+    </eventListener>
+</config>

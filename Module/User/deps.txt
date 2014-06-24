@@ -1,0 +1,3 @@
+-doctrine 2 orm 2.2
+-captcha
+-error

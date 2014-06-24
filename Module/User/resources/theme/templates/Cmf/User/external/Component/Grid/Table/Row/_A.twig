@@ -1,0 +1,5 @@
+<tr{% if id %} row_id="{{ id }}" {% endif %}>
+	{%for field in object.fields %}
+		<td>{{ field.value }}</td>
+	{% endfor %}
+</tr>

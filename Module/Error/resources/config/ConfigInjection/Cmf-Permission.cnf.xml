@@ -1,0 +1,9 @@
+<config>
+    <acl>
+        <module>
+            <Cmf-Error>
+                <permission type="allow" />
+            </Cmf-Error>
+        </module>
+    </acl>
+</config>

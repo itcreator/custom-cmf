@@ -1,0 +1,13 @@
+<config>
+    <menu>
+        <main>
+            <Atricle>
+                <title>articlesMenuTitle</title>
+                <hint>articlesMenuHint</hint>
+                <translate>Cmf\Article\Controller\ArticleController</translate>
+                <weight>10</weight>
+                <url module="Cmf\Article" controller="Article"/>
+            </Atricle>
+        </main>
+    </menu>
+</config>

@@ -1,0 +1,14 @@
+{%  set lng = lng(object) %}
+<nav class="navbar navbar-inverse">
+    {% if user.isGuest() %}
+        <ul class="nav navbar-nav">
+            <li><a href="{{ loginUrl }}" class="navbar-brand">{{ lng.login }}</a></li>
+            <li><a href="{{ registerUrl }}" class="navbar-brand">{{ lng.register }}</a></li>
+        </ul>
+    {% else %}
+        <div class="navbar-header">
+            <span class="navbar-brand">{{ user.getUserName() }}</span>
+            <a class="btn btn-default navbar-btn" href="{{ logoutUrl }}">{{ lng.logout }}</a>
+        </div>
+    {% endif %}
+</nav>
