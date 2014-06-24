@@ -131,7 +131,8 @@ class Script
             ->createDir($root . 'resources/config/')
             ->createDir($root . 'resources/config/ConfigInjection/')
             ->createDir($root . 'resources/language/')
-            ->createDir($root . 'resources/theme/');
+            ->createDir($root . 'resources/theme/')
+            ->createDir($root . 'tmp/');
 
         return $this;
     }
