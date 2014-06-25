@@ -1,5 +1,5 @@
 <config>
     <entityPath>
-        <Cmf-Article>/Module/Article/src/Cmf/Article/Model/Entity</Cmf-Article>
+        <Cmf-Article>Cmf/Article/Model/Entity</Cmf-Article>
     </entityPath>
 </config>

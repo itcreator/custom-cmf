@@ -109,8 +109,11 @@ class Doctrine
         // paths to look in
         $paths = Application::getConfigManager()->loadForModule('Cmf\Db', 'entityPath')->toArray();
         $realPaths = [];
+        $mm = Application::getModuleManager();
+
         foreach ($paths as $key => $path) {
-            $realPaths[str_replace('-', '\\', $key)] = ROOT . $path;
+            $modulePath = $mm->getModulePathByPath($path);
+            $realPaths[str_replace('-', '\\', $key)] = $modulePath . '/src/' . $path;
         }
 
         $annotationDriver = new AnnotationDriver($cachedAnnotationReader, $realPaths);

@@ -21,6 +21,7 @@ Installation guide
         "php": ">=5.4.3",
         "custom-cmf/cmf": "dev-master"
     },
+    "include-path": ["vendor/doctrine/orm/lib", "."],
     "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
