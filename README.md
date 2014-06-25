@@ -6,13 +6,13 @@ PHP CMF for developers
 Installation guide
 -------------
 
-1. Create database for your project:
+#### Create database for your project:
 
 ```sql
  CREATE DATABASE db_name DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 ```
 
-2. Create **composer.json**:
+#### Create **composer.json**:
 
 ```json
 {
@@ -37,7 +37,7 @@ Installation guide
 }
 ```
 
-3. Use Composer
+#### Use Composer
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
@@ -48,13 +48,13 @@ Then, use the install command to generate a new Custom CMF application:
 
     COMPOSER_PROCESS_TIMEOUT=4000 ./composer.phar install
 
-4. Add your database configuration into the **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
+#### Add your database configuration into the **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
 
-5. Create database:
+#### Create database:
 
     bin/console orm:schema-tool:update --force
 
-6. Run sql script misc/custom_cmf.sql
+#### Run sql script misc/custom_cmf.sql
 
 
 Other
