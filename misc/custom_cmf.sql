@@ -70,8 +70,9 @@ UNLOCK TABLES;
 
 LOCK TABLES `user_user` WRITE;
 /*!40000 ALTER TABLE `user_user` DISABLE KEYS */;
-INSERT INTO `user_user` VALUES (1,1,'admin','adm','adm','adm','adm_at_mail_com','1',1,'',1330810409,'0000-00-00 00:00:00','2013-11-03 23:59:08',1),
-(2,2,'guest','guest','guest','guest','guest_at_mail_com','',1,'',1330813046,'0000-00-00 00:00:00','2013-04-30 10:09:11',2)
+INSERT INTO `user_user` VALUES
+  (1,null,'guest','guest','guest','guest','guest_at_mail_com','',1,'',1330813046,2,'2013-04-30 10:09:11','0000-00-00 00:00:00'),
+  (2,null,'admin','adm','adm','adm','adm_at_mail_com','1',1,'',1330810409,0,'2013-11-03 23:59:08','0000-00-00 00:00:00')
 ;
 /*!40000 ALTER TABLE `user_user` ENABLE KEYS */;
 UNLOCK TABLES;
