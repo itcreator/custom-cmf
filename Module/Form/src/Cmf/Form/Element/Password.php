@@ -17,12 +17,13 @@ class Password extends Input
     public function __construct($params = [])
     {
         parent::__construct($params);
+
         $this->attributes->type = 'password';
     }
 
     /**
      * @param mixed $value
-     * @return A
+     * @return $this
      */
     public function setValue($value)
     {

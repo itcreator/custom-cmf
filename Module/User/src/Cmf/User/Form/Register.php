@@ -12,12 +12,12 @@ namespace Cmf\User\Form;
 use Cmf\Captcha\Form\Element\Captcha;
 use Cmf\Data\Validator\NotInDb;
 use Cmf\Data\Validator\StrLen;
-use Cmf\Form\Element\Password;
 use Cmf\Form\Element\ReadAndAgree;
 use Cmf\Form\Element\Submit;
 use Cmf\Form\Form;
 use Cmf\User\Form\Element\Email;
 use Cmf\User\Form\Element\Login;
+use Cmf\User\Form\Element\Password;
 use Cmf\User\Form\Element\PasswordConfirmation;
 
 /**

@@ -31,6 +31,7 @@ class Password extends \Cmf\Form\Element\Password
         ];
 
         parent::__construct(array_merge($defaultParams, $params));
+
         $this->filters->setItem(new Trim());
     }
 }

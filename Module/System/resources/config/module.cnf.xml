@@ -14,6 +14,6 @@
         <defaultAction>default</defaultAction>
     </module>
     <site>
-        <siteTitle>Супер мего CMF</siteTitle>
+        <siteTitle>Custom CMF</siteTitle>
     </site>
 </config>

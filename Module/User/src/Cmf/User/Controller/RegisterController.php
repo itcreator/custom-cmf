@@ -64,7 +64,7 @@ class RegisterController extends AbstractController
         ];
 
         $message = $view->render('Cmf/User/mail/registrationOk', $data);
-        Mailer::send('Registration in  CMF', $message, $user->getEmail(), $user->getUserName());
+        Mailer::send('Registration in CMF', $message, $user->getEmail(), $user->getUserName());
 
         return $this;
     }
