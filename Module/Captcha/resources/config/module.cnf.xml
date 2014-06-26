@@ -1,7 +1,7 @@
 <config>
     <width>300</width>
     <height>70</height>
-    <pathToDigits>Module/Captcha/resources/files/digits/</pathToDigits>
+    <pathToDigits>files/digits/</pathToDigits>
     <bgRed>200</bgRed>
     <bgGreen>255</bgGreen>
     <bgBlue>200</bgBlue>

@@ -10,6 +10,7 @@ namespace Cmf\Captcha\Controller;
 
 use Cmf\Captcha\Captcha;
 use Cmf\Controller\AbstractController;
+use Cmf\System\Application;
 
 /**
  * Controller for rendering of a captcha
@@ -28,7 +29,11 @@ class CaptchaController extends AbstractController
         //creation of an image
         $width = $config->width;
         $height = $config->height;
-        $path = $config->pathToDigits;
+
+        $mm = Application::getModuleManager();
+        $path = $mm->getModulePathByClassName(get_class($this));
+        $path .= '/resources/' . $config->pathToDigits;
+
         $ext = '.png';
         $im = imagecreate($width, $height);
 
