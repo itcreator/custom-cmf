@@ -83,7 +83,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `permission_user_2_role` WRITE;
 /*!40000 ALTER TABLE `permission_user_2_role` DISABLE KEYS */;
-INSERT INTO `permission_user_2_role` VALUES (1,2),(2,1),(3,1);
+INSERT INTO `permission_user_2_role` VALUES (1,1),(2,2),(3,2);
 /*!40000 ALTER TABLE `permission_user_2_role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
