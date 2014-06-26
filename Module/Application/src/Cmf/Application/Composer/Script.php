@@ -137,20 +137,39 @@ class Script
         return $this;
     }
 
+    /**
+     * @param string $source
+     * @param string $destination
+     * @return $this
+     */
+    protected function copyConfigFile($source, $destination)
+    {
+        if (!file_exists($destination)) {
+            copy($source, $destination);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
     protected function copyDefaultConfig()
     {
         $modulePath = realpath(__DIR__ . '/../../../../');
         $defaultConfigDir = $modulePath . '/resources/defaultConfig/';
         $root = getcwd() . '/';
         $configDir = $root . 'resources/config/';
-        copy($defaultConfigDir . 'ConfigInjection.cnf.xml', $configDir . 'ConfigInjection.cnf.xml');
+        $this->copyConfigFile($defaultConfigDir . 'ConfigInjection.cnf.xml', $configDir . 'ConfigInjection.cnf.xml');
 
         $configInjectionDir = $configDir . 'ConfigInjection/';
-        $defaultConfigInjectionDir = $defaultConfigDir . 'ConfigInjection/';
-        copy($defaultConfigInjectionDir . 'Cmf-Db.cnf.xml', $configInjectionDir . 'Cmf-Db.cnf.xml');
-        copy($defaultConfigInjectionDir . 'Cmf-Mail.cnf.xml', $configInjectionDir . 'Cmf-Mail.cnf.xml');
-
+        $defaultCiDir = $defaultConfigDir . 'ConfigInjection/';
         $publicResourcesName = 'Cmf-PublicResources.cnf.xml';
-        copy($defaultConfigInjectionDir . $publicResourcesName, $configInjectionDir . $publicResourcesName);
+        $this
+            ->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $configInjectionDir . 'Cmf-Db.cnf.xml')
+            ->copyConfigFile($defaultCiDir . 'Cmf-Mail.cnf.xml', $configInjectionDir . 'Cmf-Mail.cnf.xml')
+            ->copyConfigFile($defaultCiDir . $publicResourcesName, $configInjectionDir . $publicResourcesName);
+
+        return $this;
     }
 }
