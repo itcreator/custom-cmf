@@ -10,7 +10,6 @@
 namespace Cmf\User\Controller;
 
 use Cmf\Form\Form;
-use Cmf\Component\Field\AbstractFieldConfig;
 use Cmf\Controller\CrudController;
 use Cmf\Controller\Response\Forward;
 use Cmf\Db\BaseEntity;
@@ -27,25 +26,6 @@ class UserController extends CrudController
 
     /** @var string */
     protected $entityName = 'Cmf\User\Model\Entity\User';
-
-    /**
-     * @return AbstractFieldConfig
-     */
-    protected function getFieldsConfig()
-    {
-        return \Cmf\Component\Field\Factory::getConfig('Cmf\User');
-    }
-
-    /**
-     * @return \Cmf\Component\ActionLink\AbstractConfig
-     */
-    protected function getActionLinkConfig()
-    {
-        $config = Application::getConfigManager()->loadForModule('Cmf\User', 'actionLink');
-        $className = $config->configClass;
-
-        return new $className();
-    }
 
     /**
      * @param int|null $id

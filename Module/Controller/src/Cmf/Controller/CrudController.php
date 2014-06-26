@@ -46,18 +46,33 @@ abstract class CrudController extends AbstractController
     /** @var string */
     protected $entityName = '';
 
+    /** @var string  */
+    protected $fieldConfigKey = 'field';
+
     /**
      * @return AbstractFieldConfig
      */
-    abstract protected function getFieldsConfig();
+    protected function getFieldsConfig()
+    {
+        $mm = Application::getModuleManager();
+        $moduleName = $mm->getModuleNameByClass(get_class($this));
+
+        return \Cmf\Component\Field\Factory::getConfig($moduleName, $this->fieldConfigKey);
+    }
 
     /**
      * @return AbstractConfig|null null - with out action links
      */
     protected function getActionLinkConfig()
     {
-        //null - with out action links
-        return null;
+        $mm = Application::getModuleManager();
+        $moduleName = $mm->getModuleNameByClass(get_class($this));
+
+        $config = Application::getConfigManager()->loadForModule($moduleName, 'actionLink');
+
+        $className = $config && $config->configClass ? $config->configClass : null;
+
+        return $className ? new $className() : null;
     }
 
     /**

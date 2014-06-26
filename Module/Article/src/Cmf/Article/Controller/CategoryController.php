@@ -9,8 +9,6 @@
 
 namespace Cmf\Article\Controller;
 
-use Cmf\Component\Field\AbstractFieldConfig;
-
 /**
  * Category controller for articles
  *
@@ -22,10 +20,7 @@ class CategoryController extends \Cmf\Category\Controller\CategoryController
     protected $entityName = 'Cmf\Article\Model\Entity\Category';
 
     /**
-     * @return AbstractFieldConfig
+     * @var string
      */
-    protected function getFieldsConfig()
-    {
-        return \Cmf\Component\Field\Factory::getConfig('Cmf\Article', 'categoryField');
-    }
+    protected $fieldConfigKey = 'categoryField';
 }

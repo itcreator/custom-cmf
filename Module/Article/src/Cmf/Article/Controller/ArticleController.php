@@ -10,7 +10,6 @@
 namespace Cmf\Article\Controller;
 
 use Cmf\User\Auth;
-use Cmf\Component\Field\AbstractFieldConfig;
 use Cmf\Controller\CrudController;
 use Cmf\Db\BaseEntity;
 use Cmf\System\Application;
@@ -28,25 +27,8 @@ class ArticleController extends CrudController
     /** @var string */
     protected $entityName = 'Cmf\Article\Model\Entity\Article';
 
-    /**
-     * @return AbstractFieldConfig
-     */
-    protected function getFieldsConfig()
-    {
-        return \Cmf\Component\Field\Factory::getConfig('Cmf\Article');
-    }
-
-    /**
-     * @return \Cmf\Component\ActionLink\AbstractConfig
-     */
-    protected function getActionLinkConfig()
-    {
-        $config = Application::getConfigManager()->loadForModule('Cmf\Article', 'actionLink');
-
-        $className = $config->configClass;
-
-        return new $className();
-    }
+    /** @var string */
+    protected $commentEntityName = 'Cmf\Article\Model\Entity\Comment';
 
     /**
      * @param \Cmf\Article\Model\Entity\Article|BaseEntity $entity
@@ -76,7 +58,7 @@ class ArticleController extends CrudController
 
         $idContent = (int)Application::getRequest()->get('id');
         $commentForm = \Cmf\Comment\Form\Factory::create($this->request, ['idContent' => $idContent]);
-        $commentTree = new \Cmf\Comment\Tree('Cmf\Article\Model\Entity\Comment', $idContent);
+        $commentTree = new \Cmf\Comment\Tree($this->commentEntityName, $idContent);
 
         return array_merge($result, [
             'commentForm' => $commentForm,

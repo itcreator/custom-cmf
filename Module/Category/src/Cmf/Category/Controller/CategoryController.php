@@ -70,9 +70,11 @@ abstract class CategoryController extends CrudController
     protected function createForm($id = null)
     {
         $form = parent::createForm($id);
+
         $id = (int)Application::getRequest()->get('id');
         $parentInput = $form->getElement('parent');
         $parentInput->addValidator(new NotChild($id, $this->entityName));
+
         return $form;
     }
 

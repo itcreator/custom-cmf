@@ -20,7 +20,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
  *
  * @ORM\MappedSuperclass
- * @ORM\Entity(repositoryClass="Cmf\Category\Model\Repository\CategoryRepository")
+ * @ORM\Entity
  * @Gedmo\Tree(type="materializedPath")
  */
 class Category extends BaseEntity
