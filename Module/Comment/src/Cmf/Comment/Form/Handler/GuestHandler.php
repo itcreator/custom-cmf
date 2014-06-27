@@ -37,7 +37,7 @@ class GuestHandler extends AuthorizedHandler
      */
     protected function fillEntity(Comment $comment)
     {
-        $comment = parent::fillEntity($comment);
+        parent::fillEntity($comment);
 
         $form = $this->form;
         $comment

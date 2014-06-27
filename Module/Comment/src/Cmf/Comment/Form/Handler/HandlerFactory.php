@@ -42,7 +42,7 @@ class HandlerFactory
 
         $formParams = array_merge($defaultFormParams, $formParams);
 
-        if (Application::getAuth()->isGuest()) {
+        if (Application::getAuth()->getUser()->isGuest()) {
             $form = new GuestHandler($formParams, $handlerParams);
         } else {
             $form = new AuthorizedHandler($formParams, $handlerParams);

@@ -18,15 +18,4 @@ use Gedmo\Tree\Entity\Repository\MaterializedPathRepository;
  */
 class CommentRepository extends MaterializedPathRepository
 {
-    //TODO: make it in module manager
-    /** @var string  */
-    protected $moduleName = '';
-
-    /**
-     * @return string
-     */
-    public function getModuleName()
-    {
-        return $this->moduleName;
-    }
 }

@@ -20,7 +20,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @method Article getContent()
  *
  * @ORM\Table(name="article_comment")
- * @ORM\Entity(repositoryClass="Cmf\Article\Model\Repository\CommentRepository")
+ * @ORM\Entity(repositoryClass="Cmf\Comment\Model\Repository\CommentRepository")
  * @Gedmo\Tree(type="materializedPath")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */

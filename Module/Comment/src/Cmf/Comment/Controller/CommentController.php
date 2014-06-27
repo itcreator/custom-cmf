@@ -237,7 +237,8 @@ abstract class CommentController extends AbstractController
         } else {
             $response['confirmation'] = $this->prepareDeletingConfirmation($comment);
             $field = \Cmf\Component\Field\Factory::create([], $comment->getId());
-            $actionLinkConfig = $this->getActionLinkConfig($idContent, $repository->getModuleName());
+            $mm = Application::getModuleManager();
+            $actionLinkConfig = $this->getActionLinkConfig($idContent, $mm->getModuleNameByClass(get_class($this)));
             $response['actionLinks'] = \Cmf\Component\ActionLink\Factory::createLinks($actionLinkConfig, $field);
         }
 

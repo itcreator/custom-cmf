@@ -58,7 +58,9 @@ class Tree
         /** @var Comment[] $allComments */
         $allComments = $repository-> findBy(['content' => $idContent]);
 
-        $config = $this->getActionLinkConfig($idContent, $repository->getModuleName());
+        $mm = Application::getModuleManager();
+        $moduleName = $mm->getModuleNameByClass(get_class($this));
+        $config = $this->getActionLinkConfig($idContent, $moduleName);
 
         $actionLinks = [];
         foreach ($allComments as $comment) {
