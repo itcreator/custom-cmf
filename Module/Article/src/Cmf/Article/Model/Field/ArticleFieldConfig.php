@@ -25,6 +25,9 @@ use Cmf\System\Application;
  */
 class ArticleFieldConfig extends AbstractFieldConfig
 {
+    /** @var string  */
+    protected $categoryEntityName = 'Cmf\Article\Model\Entity\Category';
+
     /**
      * @return $this
      */
@@ -42,14 +45,17 @@ class ArticleFieldConfig extends AbstractFieldConfig
 
         $categoryQb = Application::getEntityManager()->createQueryBuilder()
             ->select(['cat.id value', 'cat.title', 'cat.level'])
-            ->from('Cmf\Article\Model\Entity\Category', 'cat')
+            ->from($this->categoryEntityName, 'cat')
             ->orderBy('cat.path, cat.title');
+
+        $mm = Application::getModuleManager();
+        $moduleName = $mm->getModuleNameByClass(get_class($this));
 
         $this->config = [
             'id' => ['display' => 'checkbox', 'title' => 'id', 'fieldType' => 'Id', 'input' => 'Hidden'],
             'title' => [
                 'decorator' => 'ItemLink',
-                'urlParams' => ['controller' => 'article', 'action' => 'read', 'module' => 'Cmf\Article'],
+                'urlParams' => ['controller' => 'article', 'action' => 'read', 'module' => $moduleName],
                 'fields' => ['id' => 'id'],
                 'sortable' => true,
                 'required' => true,
@@ -104,12 +110,12 @@ class ArticleFieldConfig extends AbstractFieldConfig
             'categories' => [
                 'title' => $lng['categories'],
                 'dataSource' => new QueryBuilderSource($categoryQb),
-                'entityName' => 'Cmf\Article\Model\Entity\Category',
+                'entityName' => $this->categoryEntityName,
                 'fieldType' => 'ForeignCollection',
                 'input' => 'EntityMultiSelect',
                 'foreign' => [
                     'fieldName' => 'companyName',
-                    'urlParams' => ['controller' => 'Category', 'action' => 'read', 'module' => 'Cmf\Article'],
+                    'urlParams' => ['controller' => 'Category', 'action' => 'read', 'module' => $moduleName],
                     'fields' => ['id' => 'id'],
                 ],
                 'decorator' => 'ItemLinkCollection',

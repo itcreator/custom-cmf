@@ -15,11 +15,26 @@
                         </action>
                     </Article>
                     <Category>
+                        <permission type="deny"/>
                         <action>
+                            <default>
+                                <permission type="allow"/>
+                            </default>
+                            <list>
+                                <permission type="allow"/>
+                            </list>
+                            <read>
+                                <permission type="allow"/>
+                            </read>
                             <initroot>
-                                <permission type="deny"/>
                                 <permission type="allow" role="admin"/>
                             </initroot>
+                            <edit>
+                                <permission type="allow" role="admin"/>
+                            </edit>
+                            <delete>
+                                <permission type="allow" role="admin"/>
+                            </delete>
                         </action>
                     </Category>
                     <Comment>

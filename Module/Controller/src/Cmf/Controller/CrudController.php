@@ -49,6 +49,9 @@ abstract class CrudController extends AbstractController
     /** @var string  */
     protected $fieldConfigKey = 'field';
 
+    /** @var string  */
+    protected $actionLinkKey = 'actionLink';
+
     /**
      * @return AbstractFieldConfig
      */
@@ -68,7 +71,7 @@ abstract class CrudController extends AbstractController
         $mm = Application::getModuleManager();
         $moduleName = $mm->getModuleNameByClass(get_class($this));
 
-        $config = Application::getConfigManager()->loadForModule($moduleName, 'actionLink');
+        $config = Application::getConfigManager()->loadForModule($moduleName, $this->actionLinkKey);
 
         $className = $config && $config->configClass ? $config->configClass : null;
 

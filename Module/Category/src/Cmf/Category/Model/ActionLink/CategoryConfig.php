@@ -11,6 +11,7 @@ namespace Cmf\Category\Model\ActionLink;
 
 use Cmf\Component\ActionLink\AbstractConfig;
 use Cmf\Component\Link\Constants as LinkConst;
+use Cmf\System\Application;
 
 /**
  * Action link configuration for categories
@@ -26,20 +27,23 @@ class CategoryConfig extends AbstractConfig
     {
         $lng = \Cmf\Language\Factory::get($this);
 
+        $mm = Application::getModuleManager();
+        $moduleName = $mm->getModuleNameByClass(get_class($this));
+
         $this->config = [
             'title' => $lng['actions'],
             'items' => [
-                'list' => [
+                'default' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['toItemsList'],
-                    'url' => ['module' => 'Cmf\Article', 'controller' => 'Category'],
+                    'url' => ['module' => $moduleName, 'controller' => 'Category'],
                     'class' => '',
                     'actions' => ['edit', 'read', 'delete', 'create'],
                 ],
                 'read' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['view'],
-                    'url' => ['module' => 'Cmf\Article', 'controller' => 'Category', 'action' => 'read'],
+                    'url' => ['module' => $moduleName, 'controller' => 'Category', 'action' => 'read'],
                     'identifier' => 'id',
                     'class' => '',
                     'actions' => ['edit', 'default', 'delete'],
@@ -47,14 +51,14 @@ class CategoryConfig extends AbstractConfig
                 'edit' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['edit'],
-                    'url' => ['module' => 'Cmf\Article', 'controller' => 'Category', 'action' => 'edit'],
+                    'url' => ['module' => $moduleName, 'controller' => 'Category', 'action' => 'edit'],
                     'identifier' => 'id',
                     'actions' => ['default', 'read', 'delete'],
                 ],
                 'delete' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['delete'],
-                    'url' => ['module' => 'Cmf\Article', 'controller' => 'Category', 'action' => 'delete'],
+                    'url' => ['module' => $moduleName, 'controller' => 'Category', 'action' => 'delete'],
                     'identifier' => 'id',
                     'class' => '',
                     'actions' => ['default', 'read'],

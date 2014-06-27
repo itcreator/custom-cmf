@@ -35,16 +35,8 @@ abstract class CategoryController extends CrudController
     /** @var string */
     protected $titleField = 'title';
 
-    /**
-     * @return \Cmf\Component\ActionLink\AbstractConfig
-     */
-    protected function getActionLinkConfig()
-    {
-        $config = Application::getConfigManager()->loadForModule('Cmf\Category', 'actionLink');
-        $className = $config->configClass;
-
-        return new $className();
-    }
+    /** @var string  */
+    protected $actionLinkKey = 'categoryActionLink';
 
     /**
      * If node not root then method return true

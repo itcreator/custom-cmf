@@ -20,7 +20,7 @@ class CategoryFieldConfig extends \Cmf\Category\Model\Field\CategoryFieldConfig
     protected $moduleName = 'Cmf\Article';
 
     /** @var string */
-    protected $controllerName = 'Article';
+    protected $controllerName = 'Category';
 
     /** @var string  */
     protected $entityName = 'Cmf\Article\Model\Entity\Category';

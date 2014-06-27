@@ -22,5 +22,6 @@ class CommentController extends \Cmf\Comment\Controller\CommentController
     /** @var string */
     protected $contentEntityName = 'Cmf\Article\Model\Entity\Article';
 
+    /** @var string  */
     protected $contentControllerName = 'Article';
 }

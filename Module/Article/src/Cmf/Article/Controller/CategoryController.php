@@ -19,8 +19,6 @@ class CategoryController extends \Cmf\Category\Controller\CategoryController
     /** @var string */
     protected $entityName = 'Cmf\Article\Model\Entity\Category';
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $fieldConfigKey = 'categoryField';
 }

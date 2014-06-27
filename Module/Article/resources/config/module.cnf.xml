@@ -2,6 +2,9 @@
     <actionLink>
         <configClass>Cmf\Article\Model\ActionLink\ArticleConfig</configClass>
     </actionLink>
+    <categoryActionLink>
+        <configClass>Cmf\Article\Model\ActionLink\CategoryConfig</configClass>
+    </categoryActionLink>
     <field>
         <configClass>Cmf\Article\Model\Field\ArticleFieldConfig</configClass>
     </field>
