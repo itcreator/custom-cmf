@@ -25,8 +25,8 @@ interface HandlerInterface
     public function getForm();
 
     /**
-     * @param array $data
+     * @param array|null $data
      * @return bool
      */
-    public function handle(array $data);
+    public function handle(array $data = null);
 }

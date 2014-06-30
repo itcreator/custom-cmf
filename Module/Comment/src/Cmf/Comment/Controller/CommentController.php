@@ -71,7 +71,7 @@ abstract class CommentController extends AbstractController
         $formHandler = HandlerFactory::create($this->request, [], $handlerParams);
 
         $request = Application::getRequest();
-        if ($formHandler->handle($request->getVars(Request::TYPE_POST))) {
+        if ($formHandler->handle()) {
             $response = new PostRedirectGet($this);
             $response->setRedirectPath([
                 'module' => $this->request->getModuleName(),

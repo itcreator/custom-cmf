@@ -106,11 +106,13 @@ class AuthorizedHandler extends AbstractHandler
     }
 
     /**
-     * @param array $data
+     * @param array|null $data
      * @return bool
      */
-    public function handle(array $data)
+    public function handle(array $data = null)
     {
+        $data = $this->prepareFormData($data);
+
         $form = $this->form;
         $result = false;
 

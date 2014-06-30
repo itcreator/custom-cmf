@@ -10,6 +10,7 @@
 namespace Cmf\Form\Handler;
 
 use Cmf\Form\Form;
+use Cmf\System\Application;
 
 /**
  * Abstract class for form handler
@@ -45,5 +46,19 @@ abstract class AbstractHandler implements HandlerInterface
     public function getForm()
     {
         return $this->form;
+    }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    protected function prepareFormData(array $data = null)
+    {
+        if (null == $data) {
+            $request = Application::getRequest();
+            $data = $request->getVars($this->form->getMethod());
+        }
+
+        return $data;
     }
 }

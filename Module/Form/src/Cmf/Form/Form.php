@@ -266,4 +266,23 @@ class Form extends AbstractElement
 
         return $this;
     }
+
+    /**
+     * @return mixed|null
+     */
+    public function getMethod()
+    {
+        return $this->getAttributes()->getItem('method');
+    }
+
+    /**
+     * @param string $method
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        $this->getAttributes()->setItem($method, 'method');
+
+        return $this;
+    }
 }
