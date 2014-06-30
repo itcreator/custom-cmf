@@ -20,6 +20,9 @@ use Cmf\System\Application;
  */
 class ArticleConfig extends AbstractConfig
 {
+    /** @var string  */
+    protected $controllerName = 'Article';
+
     /**
      * @return $this
      */
@@ -36,14 +39,14 @@ class ArticleConfig extends AbstractConfig
                 'default' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['toItemsList'],
-                    'url' => ['module' => $moduleName, 'controller' => 'Article'],
+                    'url' => ['module' => $moduleName, 'controller' => $this->controllerName],
                     'class' => '',
                     'actions' => ['edit', 'read', 'delete', 'create'],
                 ],
                 'read' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['view'],
-                    'url' => ['module' => $moduleName, 'controller' => 'Article', 'action' => 'read'],
+                    'url' => ['module' => $moduleName, 'controller' => $this->controllerName, 'action' => 'read'],
                     'identifier' => 'id',
                     'class' => '',
                     'actions' => ['edit', 'default', 'delete'],
@@ -51,14 +54,14 @@ class ArticleConfig extends AbstractConfig
                 'edit' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['edit'],
-                    'url' => ['module' => $moduleName, 'controller' => 'Article', 'action' => 'edit'],
+                    'url' => ['module' => $moduleName, 'controller' => $this->controllerName, 'action' => 'edit'],
                     'identifier' => 'id',
                     'actions' => ['default', 'read', 'delete'],
                 ],
                 'delete' => [
                     'type' => LinkConst::TYPE_LINK,
                     'title' => $lng['delete'],
-                    'url' => ['module' => $moduleName, 'controller' => 'Article', 'action' => 'delete'],
+                    'url' => ['module' => $moduleName, 'controller' => $this->controllerName, 'action' => 'delete'],
                     'identifier' => 'id',
                     'class' => '',
                     'actions' => ['default', 'read'],
