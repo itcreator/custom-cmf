@@ -9,10 +9,10 @@
 
 namespace Cmf\Article\Model\Entity;
 
+use Cmf\Category\Db\CategoryAccessorTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\PersistentCollection;
 
 /**
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
@@ -22,8 +22,10 @@ use Doctrine\ORM\PersistentCollection;
  */
 class Article extends BaseArticle
 {
+    use CategoryAccessorTrait;
+
     /**
-     * @var |Category[]
+     * @var Category[]
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="articles")
      * @ORM\JoinTable(name="article_2_category")
      */
@@ -39,37 +41,5 @@ class Article extends BaseArticle
     {
         $this->categories = new ArrayCollection();
         $this->comments = new ArrayCollection();
-    }
-
-    /**
-     * For adding article to category use only $category->addArticle($article)
-     *
-     * @param Category $category
-     * @return Article
-     */
-    public function addToCategory(Category $category)
-    {
-        $this->categories[] = $category;
-
-        return $this;
-    }
-
-    /**
-     * @param Collection $categories
-     * @return $this
-     */
-    public function setCategories(Collection $categories = null)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
-     * @return ArrayCollection|Collection|PersistentCollection
-     */
-    public function getCategories()
-    {
-        return $this->categories;
     }
 }
