@@ -32,6 +32,9 @@
                             <create>
                                 <permission type="allow" role="admin"/>
                             </create>
+                            <creationok>
+                                <permission type="allow" role="admin"/>
+                            </creationok>
                             <edit>
                                 <permission type="allow" role="admin"/>
                             </edit>
