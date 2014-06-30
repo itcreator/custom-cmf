@@ -29,6 +29,9 @@
                             <initroot>
                                 <permission type="allow" role="admin"/>
                             </initroot>
+                            <create>
+                                <permission type="allow" role="admin"/>
+                            </create>
                             <edit>
                                 <permission type="allow" role="admin"/>
                             </edit>
