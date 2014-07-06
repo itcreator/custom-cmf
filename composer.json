@@ -49,7 +49,6 @@
         "firephp/firephp-core": "dev-master",
         "frameworks/jquery": "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
-        "smarty/smarty": ">=v3.1.15",
         "twig/twig": "1.*",
         "twitter/bootstrap": "3.1.*@dev",
         "zendframework/zend-config": ">=2.2.4",
