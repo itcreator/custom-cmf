@@ -59,7 +59,7 @@ Edit  file **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
 
 #### Import fixtures
 
-mysql custom_cmf < misc/custom_cmf.sql
+    mysql custom_cmf < misc/custom_cmf.sql
 
 
 #### Web server config
