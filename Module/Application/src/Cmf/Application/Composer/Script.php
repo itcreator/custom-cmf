@@ -31,6 +31,7 @@ class Script
         $installer
             ->createSymLinks($event)
             ->createIndexFile()
+            ->copyHtaccess()
             ->createResourceFolders()
             ->copyDefaultConfig();
     }
@@ -73,6 +74,23 @@ class Script
         $indexLink = $publicDir . 'index.php';
         copy($modulePath . '/resources/public/index.php', $indexLink);
         chmod($indexLink, 0755);
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function copyHtaccess()
+    {
+        $modulePath = realpath(__DIR__ . '/../../../../');
+        $root = getcwd() . '/';
+        $publicDir = $root . 'public/';
+        $this->createDir($publicDir);
+
+        $destFile = $publicDir . '.htaccess';
+        copy($modulePath . '/resources/public/.htaccess', $destFile);
+        chmod($destFile, 0755);
 
         return $this;
     }
