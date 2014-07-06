@@ -65,6 +65,7 @@ mysql custom_cmf < misc/custom_cmf.sql
 #### Web server config
 
 nginx: https://github.com/itcreator/custom-cmf/blob/master/misc/nginx.config
+
 apache2: https://github.com/itcreator/custom-cmf/blob/master/misc/apache2.conf
 
 ####Other
