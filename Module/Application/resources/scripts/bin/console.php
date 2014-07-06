@@ -3,7 +3,6 @@
 define('ROOT', getcwd() . '/');
 chdir(ROOT);
 
-require 'boot/bootstrap.php';
 require 'boot/bootstrap_cli.php';
 
 $application = \Cmf\System\Application::getInstance();

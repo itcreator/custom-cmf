@@ -8,6 +8,8 @@
  * @author    Vital Leshchyk <vitalleshchyk@gmail.com>
  */
 
+require 'bootstrap.php';
+
 if ("development" == APPLICATION_MODE) {
     function dmp($variable, $caption = 'dump')
     {

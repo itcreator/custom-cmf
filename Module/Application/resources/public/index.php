@@ -12,7 +12,6 @@ $root = realpath($_SERVER['DOCUMENT_ROOT'] . '/../');
 define('ROOT', (DIRECTORY_SEPARATOR == $root[strlen($root) - 1]) ? $root : $root . DIRECTORY_SEPARATOR);
 chdir(ROOT);
 
-require 'boot/bootstrap.php';
 require 'boot/bootstrap_www.php';
 
 //TODO: move to config
