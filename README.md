@@ -49,16 +49,23 @@ Then, use the install command to generate a new Custom CMF application:
 
     COMPOSER_PROCESS_TIMEOUT=4000 ./composer.phar install
 
-#### Add your database configuration into the **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
+#### Add your database configuration
+
+Edit  file **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
 
 #### Create database:
 
     bin/console orm:schema-tool:update --force
 
-#### Run sql script misc/custom_cmf.sql
+#### Run sql dump
+
+Run script misc/custom_cmf.sql
 
 
-Other
--------------
+#### Web server config
+
+nginx: https://github.com/itcreator/custom-cmf/blob/master/misc/nginx.config
+
+####Other
 
 See Custom CMF example application https://github.com/itcreator/custom-cmf-example

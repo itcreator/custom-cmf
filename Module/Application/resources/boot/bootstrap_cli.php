@@ -8,4 +8,4 @@
  * @author    Vital Leshchyk <vitalleshchyk@gmail.com>
  */
 
-define('APPLICATION_MODE', 'dev');
+define('APPLICATION_MODE', 'development');
