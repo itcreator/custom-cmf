@@ -14,6 +14,11 @@ function initEvents()
     $evm->setSharedManager(new \Zend\EventManager\SharedEventManager());
 }
 
+// Define application environment
+if (!defined('APPLICATION_MODE')) {
+    define('APPLICATION_MODE', (getenv('APPLICATION_MODE') ? getenv('APPLICATION_MODE') : 'production'));
+}
+
 mb_internal_encoding('UTF-8');
 
 require_once ROOT . '/vendor/autoload.php';
