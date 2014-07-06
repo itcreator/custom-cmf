@@ -33,9 +33,9 @@ class Short implements AdapterInterface
 
         $config = Application::getConfigManager()->loadForModule('Cmf\System', 'module');
 
-        $defaultModule = $config->defaultModule;
-        $defaultController = $config->defaultController;
-        $defaultAction = $config->defaultAction;
+        $defaultModule = mb_strtolower($config->defaultModule);
+        $defaultController = mb_strtolower($config->defaultController);
+        $defaultAction = mb_strtolower($config->defaultAction);
 
         $defaults = ['module' => $defaultModule, 'controller' => $defaultController, 'action' => $defaultAction,];
         $params = array_merge($defaults, $params);
@@ -48,7 +48,8 @@ class Short implements AdapterInterface
         $controller = ltrim(mb_strtolower(preg_replace('/([A-Z])/', "_$1", $params['controller'])), '_');
         $action = mb_strtolower($params['action']);
 
-        if ($module == $defaultModule && $controller == $defaultController && $action == $defaultAction) {
+        $fullModuleName = mb_strtolower($params['module']);
+        if ($fullModuleName == $defaultModule && $controller == $defaultController && $action == $defaultAction) {
             $url = '';
         } elseif ($controller == $defaultController && $action == $defaultAction) {
             $url = '/' . urlencode($module) . '/';
