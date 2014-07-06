@@ -1,6 +1,6 @@
 DirectoryIndex index.php
 
-<IfModule mod_setenvif.c>
+<IfModule mod_env.c>
     # Development Mode, if need
     #SetEnv APPLICATION_MODE development
 </IfModule>
