@@ -6,12 +6,6 @@ PHP CMF for developers
 Installation guide
 -------------
 
-#### Create database for your project:
-
-```sql
- CREATE DATABASE db_name DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-```
-
 #### Create **composer.json**:
 
 ```json
@@ -53,18 +47,26 @@ Then, use the install command to generate a new Custom CMF application:
 
 Edit  file **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
 
-#### Create database:
+#### Create database for your project:
+
+```sql
+ CREATE DATABASE custom_cmf DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+```
+
+#### Create database schema:
 
     bin/console orm:schema-tool:update --force
 
-#### Run sql dump
+#### Import fixtures
 
-Run script misc/custom_cmf.sql
+mysql custom_cmf < misc/custom_cmf.sql
 
 
 #### Web server config
 
 nginx: https://github.com/itcreator/custom-cmf/blob/master/misc/nginx.config
+
+apache2: https://github.com/itcreator/custom-cmf/blob/master/misc/apache2.conf
 
 ####Other
 
