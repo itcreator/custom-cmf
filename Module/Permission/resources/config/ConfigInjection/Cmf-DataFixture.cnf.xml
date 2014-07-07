@@ -1,0 +1,5 @@
+<config>
+    <fixturePath>
+        <Cmf-Permission>Cmf\Permission</Cmf-Permission>
+    </fixturePath>
+</config>
