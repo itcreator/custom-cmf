@@ -58,11 +58,33 @@ class Binding extends BaseEntity
     protected $params;
 
     /**
+     * @param Block $block
+     * @return $this
+     */
+    public function setBlock(Block $block)
+    {
+        $this->block = $block;
+
+        return $this;
+    }
+
+    /**
      * @return Block
      */
     public function getBlock()
     {
         return $this->block;
+    }
+
+    /**
+     * @param Container $container
+     * @return $this
+     */
+    public function setContainer(Container $container)
+    {
+        $this->container = $container;
+
+        return $this;
     }
 
     /**
