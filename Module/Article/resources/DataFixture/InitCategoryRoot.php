@@ -7,7 +7,7 @@
  * @license   https://github.com/itcreator/custom-cmf/blob/master/LICENSE
  */
  
-namespace Cmf\Article;
+namespace Cmf\Article\DataFixture;
 
 use Cmf\Article\Model\Entity\Category;
 use Cmf\System\Application;
