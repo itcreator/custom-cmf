@@ -9,9 +9,15 @@
 
 namespace Cmf\Application\Composer;
 
+use Cmf\DataFixture\FixtureLoader;
 use Cmf\Standard\TSingleton;
 use Cmf\System\Application;
 use Composer\Script\CommandEvent;
+use Doctrine\DBAL\Exception\DriverException;
+use Doctrine\ORM\Tools\SchemaTool;
+use Zend\Config\Config as ZendConfig;
+use Zend\Config\Reader\Xml as XmlConfig;
+use Zend\Config\Writer\Xml as XmlWriter;
 
 /**
  * Script for composer events. It is part of the CMF installer
@@ -33,7 +39,10 @@ class Script
             ->createIndexFile()
             ->copyHtaccess()
             ->createResourceFolders()
-            ->copyDefaultConfig();
+            ->copyDefaultConfig($event)
+            ->updateSchema($event)
+            ->loadFixtures($event)
+        ;
     }
 
     /**
@@ -158,21 +167,119 @@ class Script
     /**
      * @param string $source
      * @param string $destination
-     * @return $this
+     * @return bool true if file is new
      */
     protected function copyConfigFile($source, $destination)
     {
-        if (!file_exists($destination)) {
+        $fileExist = file_exists($destination);
+        if (!$fileExist) {
             copy($source, $destination);
         }
+
+        return !$fileExist;
+    }
+
+    /**
+     * @param CommandEvent $event
+     * @param string $dbConfigPath
+     * @return $this
+     */
+    protected function configureDb(CommandEvent $event, $dbConfigPath)
+    {
+        $reader = new XmlConfig();
+        $config = new ZendConfig($reader->fromFile($dbConfigPath), true);
+        $io = $event->getIO();
+
+        $passwordValidator = function ($value) {
+            if (!preg_match('/^([0-9a-zA-Z_~\-`@"]+)*$/u', $value)) {
+                throw new \Exception('Only this symbols 0-9 a-z A-Z _ ~ \ - ` @ "');
+            }
+
+            return $value;
+        };
+
+        $nameValidator = function ($value) {
+            if (!preg_match('/^([0-9a-zA-Z]+)$/u', $value)) {
+                throw new \Exception('Only this symbols 0-9 a-z A-Z "');
+            }
+
+            return $value;
+        };
+
+        $hostValidator = function ($value) {
+            if (!preg_match('/^([0-9a-z\.]+)*$/u', $value)) {
+                throw new \Exception('Only this symbols 0-9 a-z . "');
+            }
+            return $value;
+        };
+
+        $io->write('Data base configuration');
+        $path = $io->askAndValidate('Path to data base [localhost]: ', $hostValidator, false, 'localhost');
+        $dbName = $io->askAndValidate('Data base name: ', $nameValidator);
+        $userName = $io->askAndValidate('User name for DB: ', $nameValidator);
+        $password = $io->askAndValidate('User password for DB: ', $passwordValidator);
+
+
+        $config->connection->path = $path;
+        $config->connection->dbname = null;
+        $config->connection->user = $userName;
+        $config->connection->password = $password;
+
+        $writer = new XmlWriter();
+        $writer->toFile($dbConfigPath, $config);
+
+        $this->createDataBase($event, $dbName);
+
+        $config->connection->dbname = $dbName;
+
+        $writer = new XmlWriter();
+        $writer->toFile($dbConfigPath, $config);
 
         return $this;
     }
 
     /**
+     * @param CommandEvent $event
+     * @param string $dbName
+     * @return $this
+     * @throws \Doctrine\DBAL\Exception\DriverException
+     */
+    protected function createDataBase(CommandEvent $event, $dbName)
+    {
+        $query = sprintf('CREATE DATABASE %s DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;', $dbName);
+        /** @var \Doctrine\DBAL\Driver\PDOMySql\Driver $driver */
+
+        $created = true;
+        $connection = Application::getEntityManager()->getConnection();
+        try {
+            $connection->executeQuery($query);
+        } catch (DriverException $e) {
+            //if database already exist
+            if (1007 !== $e->getErrorCode()) {
+                throw $e;
+            }
+
+            $created = false;
+        }
+
+        Application::getInstance()->resetEntityManager();
+
+        if ($created) {
+            $msg = sprintf('Database "%s" is created', $dbName);
+        } else {
+            $msg = sprintf('Database "%s" already exist', $dbName);
+        }
+
+        $event->getIO()->write($msg);
+
+        return $this;
+    }
+
+    /**
+     * @param CommandEvent $event
      * @return $this
      */
-    protected function copyDefaultConfig()
+    protected function copyDefaultConfig(CommandEvent $event)
     {
         $modulePath = realpath(__DIR__ . '/../../../../');
         $defaultConfigDir = $modulePath . '/resources/defaultConfig/';
@@ -183,10 +290,47 @@ class Script
         $configInjectionDir = $configDir . 'ConfigInjection/';
         $defaultCiDir = $defaultConfigDir . 'ConfigInjection/';
         $publicResourcesName = 'Cmf-PublicResources.cnf.xml';
-        $this
-            ->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $configInjectionDir . 'Cmf-Db.cnf.xml')
-            ->copyConfigFile($defaultCiDir . 'Cmf-Mail.cnf.xml', $configInjectionDir . 'Cmf-Mail.cnf.xml')
-            ->copyConfigFile($defaultCiDir . $publicResourcesName, $configInjectionDir . $publicResourcesName);
+
+        $this->copyConfigFile($defaultCiDir . 'Cmf-Mail.cnf.xml', $configInjectionDir . 'Cmf-Mail.cnf.xml');
+        $this->copyConfigFile($defaultCiDir . $publicResourcesName, $configInjectionDir . $publicResourcesName);
+
+        $dbConfigPath = $configInjectionDir . 'Cmf-Db.cnf.xml';
+        if ($this->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $dbConfigPath)) {
+            $this->configureDb($event, $dbConfigPath);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param CommandEvent $event
+     * @return $this
+     */
+    protected function updateSchema(CommandEvent $event)
+    {
+        $io = $event->getIO();
+        $em = Application::getEntityManager();
+        $metaData = $em->getMetadataFactory()->getAllMetadata();
+        $schemaTool = new SchemaTool($em);
+
+        $io->write('Updating database schema...');
+        $schemaTool->updateSchema($metaData, true);
+        $io->write('Database schema updated successfully!');
+
+        return $this;
+    }
+
+
+    /**
+     * @param CommandEvent $event
+     * @return $this
+     */
+    public function loadFixtures(CommandEvent $event)
+    {
+        $f = new FixtureLoader();
+        $f->load();
+
+        $event->getIO()->write('Fixtures loaded successfully');
 
         return $this;
     }

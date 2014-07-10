@@ -43,25 +43,6 @@ Then, use the install command to generate a new Custom CMF application:
 
     COMPOSER_PROCESS_TIMEOUT=4000 ./composer.phar install
 
-#### Add your database configuration
-
-Edit  file **resources/config/ConfigInjection.Cmf-Db.cnf.xml** file
-
-#### Create database for your project:
-
-```sql
- CREATE DATABASE custom_cmf DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-```
-
-#### Create database schema:
-
-    bin/console orm:schema-tool:update --force
-
-#### Import fixtures
-
-    mysql custom_cmf < misc/custom_cmf.sql
-
-
 #### Web server config
 
 nginx: https://github.com/itcreator/custom-cmf/blob/master/misc/nginx.config

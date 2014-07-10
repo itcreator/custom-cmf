@@ -78,19 +78,24 @@ class Doctrine
     }
 
     /**
+     * @param bool $reload
      * @return EntityManager|null
      */
-    public function getEm()
+    public function getEm($reload = false)
     {
-        if (!self::$em) {
-            $this->initEm();
+        if (!self::$em || $reload) {
+            $this->initEm($reload);
         }
 
         return self::$em;
     }
 
 
-    public function initEm()
+    /**
+     * @param bool $reload
+     * @return $this
+     */
+    public function initEm($reload = false)
     {
         $config = new Configuration();
         $cache = $this->initCache($config);
@@ -107,7 +112,7 @@ class Doctrine
         // now we want to register our application entities,
         // for that we need another metadata driver used for Entity namespace
         // paths to look in
-        $paths = Application::getConfigManager()->loadForModule('Cmf\Db', 'entityPath')->toArray();
+        $paths = Application::getConfigManager()->loadForModule('Cmf\Db', 'entityPath', $reload)->toArray();
         $realPaths = [];
         $mm = Application::getModuleManager();
 

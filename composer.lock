@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0e28ffa94ca97c49c647d77258bce2f2",
+    "hash": "156eefc7e1ff6bc02f90763a4e37ac9d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -85,12 +85,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "17282d7b86cce45bce4349848bb5249de193a870"
+                "reference": "95818515f9db846b152e3df11eb40ca27e1313f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/17282d7b86cce45bce4349848bb5249de193a870",
-                "reference": "17282d7b86cce45bce4349848bb5249de193a870",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/95818515f9db846b152e3df11eb40ca27e1313f7",
+                "reference": "95818515f9db846b152e3df11eb40ca27e1313f7",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +151,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-07-05 14:42:41"
+            "time": "2014-07-08 17:06:17"
         },
         {
             "name": "doctrine/collections",
@@ -364,12 +364,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "5eb36c7a643d5e44f0eee4ca39e56088527ce146"
+                "reference": "8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/5eb36c7a643d5e44f0eee4ca39e56088527ce146",
-                "reference": "5eb36c7a643d5e44f0eee4ca39e56088527ce146",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f",
+                "reference": "8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f",
                 "shasum": ""
             },
             "require": {
@@ -430,7 +430,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-06-30 14:48:03"
+            "time": "2014-07-08 17:17:49"
         },
         {
             "name": "doctrine/inflector",
@@ -786,12 +786,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "9a491e7983209bf320d40917291c03e856eee947"
+                "reference": "a8cc82877396aab7b028c4594dad9a4392fbf7f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/9a491e7983209bf320d40917291c03e856eee947",
-                "reference": "9a491e7983209bf320d40917291c03e856eee947",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/a8cc82877396aab7b028c4594dad9a4392fbf7f0",
+                "reference": "a8cc82877396aab7b028c4594dad9a4392fbf7f0",
                 "shasum": ""
             },
             "require": {
@@ -836,7 +836,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-20 17:41:51"
+            "time": "2014-07-09 09:06:26"
         },
         {
             "name": "twig/twig",

@@ -71,13 +71,13 @@
     ],
     "scripts": {
         "post-install-cmd": [
-            "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ],
         "post-update-cmd": [
-            "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ]
     }

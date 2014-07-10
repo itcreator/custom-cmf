@@ -1,4 +1,11 @@
 <config>
+    <Cmf-DataFixture>
+        <Cmf-Article/>
+        <Cmf-Block/>
+        <Cmf-Menu/>
+        <Cmf-Permission/>
+        <Cmf-User/>
+    </Cmf-DataFixture>
     <Cmf-Db>
         <Cmf-Article/>
         <Cmf-Block/>
@@ -6,6 +13,11 @@
         <Cmf-User/>
         <Cmf-Permission/>
     </Cmf-Db>
+    <Cmf-Menu>
+        <Cmf-Article/>
+        <Cmf-Index/>
+        <Cmf-User/>
+    </Cmf-Menu>
     <Cmf-System>
         <Cmf-Permission/>
     </Cmf-System>
@@ -20,9 +32,4 @@
         <Cmf-Menu/>
         <Cmf-Comment/>
     </Cmf-PublicResources>
-    <Cmf-Menu>
-        <Cmf-Article/>
-        <Cmf-Index/>
-        <Cmf-User/>
-    </Cmf-Menu>
 </config>

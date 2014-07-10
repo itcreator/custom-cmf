@@ -161,6 +161,8 @@ class Application implements EventManagerAwareInterface
     protected function initServiceManager()
     {
         self::$serviceManager = new ServiceManager();
+        self::$serviceManager->setAllowOverride(true);
+
         self::$serviceManager->setService('ClassLoader', require ('vendor/autoload.php'));
 
         self::$serviceManager->setFactory('Acl', function () {
@@ -208,6 +210,20 @@ class Application implements EventManagerAwareInterface
         self::$serviceManager->setFactory('ViewProcessor', function () {
             return new ViewProcessor();
         });
+    }
+
+    /**
+     * @return $this
+     */
+    public function resetEntityManager()
+    {
+        self::$serviceManager->setFactory('EntityManager', function () {
+            $db = new \Cmf\Db\Doctrine();
+
+            return $db->getEm(true);
+        });
+
+        return $this;
     }
 
     /**

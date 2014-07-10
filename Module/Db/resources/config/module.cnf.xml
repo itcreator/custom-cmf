@@ -4,9 +4,9 @@
         <driver>pdo_mysql</driver>
         <charset>utf8</charset>
         <path>localhost</path>
-        <dbname>***</dbname>
-        <user>db_user_name</user>
-        <password>password</password>
+        <dbname/>
+        <user/>
+        <password/>
     </connection>
     <entityPath>
         <!--<Article>/Module/Article/Model/Entity</Article>-->
