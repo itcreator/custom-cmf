@@ -25,7 +25,7 @@ class LoadMenuBlock extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 110;
+        return 120;
     }
 
     /**
