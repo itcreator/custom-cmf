@@ -63,6 +63,7 @@ class Script
         $installer
             ->createDbConfig($event)
             ->updateSchema($event)
+            ->generateProxies($event)
             ->loadFixtures($event);
     }
 
@@ -356,6 +357,32 @@ class Script
 
         if ($this->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $dbConfigPath)) {
             $this->configureDb($event, $dbConfigPath);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param CommandEvent $event
+     * @return $this
+     */
+    public function generateProxies(CommandEvent $event)
+    {
+        $em = Application::getEntityManager();
+        $metadatas = $em->getMetadataFactory()->getAllMetadata();
+
+        $proxyDir = ROOT . \Cmf\Db\Doctrine::PROXY_DIR;
+        if (!is_dir($proxyDir)) {
+            mkdir($proxyDir, 0777, true);
+        }
+
+        $io = $event->getIO();
+
+        if (count($metadatas)) {
+            $em->getProxyFactory()->generateProxyClasses($metadatas, $proxyDir);
+            $io->write(sprintf('Proxy classes generated to "<info>%s</info>"', $proxyDir));
+        } else {
+            $io->write('No Metadata Classes to process.');
         }
 
         return $this;
