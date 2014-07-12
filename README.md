@@ -43,7 +43,13 @@ Then, use the install command to generate a new Custom CMF application:
 
     COMPOSER_PROCESS_TIMEOUT=4000 ./composer.phar install
 
-#### Web server config
+#### Web server
+
+For running of the Custom CMF you can use built-in web server:
+
+    bin/console server:start
+
+You can also use other servers
 
 nginx: https://github.com/itcreator/custom-cmf/blob/master/misc/nginx.config
 
