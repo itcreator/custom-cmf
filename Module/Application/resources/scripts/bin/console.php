@@ -36,6 +36,8 @@ $cli->addCommands([
     new \Doctrine\ORM\Tools\Console\Command\RunDqlCommand(),
     new \Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
 
+    //Server Command
+    new \Cmf\Server\Console\StartServerCommand(),
 ]);
 
 $cli->run();

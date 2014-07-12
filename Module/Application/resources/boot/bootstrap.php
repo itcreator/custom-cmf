@@ -14,6 +14,8 @@ function initEvents()
     $evm->setSharedManager(new \Zend\EventManager\SharedEventManager());
 }
 
+define('PUBLIC_DIR', ROOT . 'public' . DIRECTORY_SEPARATOR);
+
 // Define application environment
 if (!defined('APPLICATION_MODE')) {
     define('APPLICATION_MODE', (getenv('APPLICATION_MODE') ? getenv('APPLICATION_MODE') : 'production'));

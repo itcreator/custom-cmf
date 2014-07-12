@@ -34,6 +34,7 @@
             "Cmf\\Mail\\": "Module/Mail/src/",
             "Cmf\\Menu\\": "Module/Menu/src/",
             "Cmf\\Module\\": "Module/Module/src/",
+            "Cmf\\Server\\": "Module/Server/src/",
             "Cmf\\Standard\\": "Module/Standard/src/",
             "Cmf\\Structure\\": "Module/Structure/src/",
             "Cmf\\System\\": "Module/System/src/",
