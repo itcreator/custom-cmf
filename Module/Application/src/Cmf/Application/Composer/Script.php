@@ -39,10 +39,7 @@ class Script
             ->createIndexFile()
             ->copyHtaccess()
             ->createResourceFolders()
-            ->copyDefaultConfig($event)
-            ->updateSchema($event)
-            ->loadFixtures($event)
-        ;
+            ->copyDefaultConfig();
     }
 
     /**
@@ -55,6 +52,18 @@ class Script
 
         $application = Application::getInstance();
         $application->init();
+    }
+
+    /**
+     * @param CommandEvent $event
+     */
+    public static function updateDb(CommandEvent $event)
+    {
+        $installer = self::getInstance();
+        $installer
+            ->createDbConfig($event)
+            ->updateSchema($event)
+            ->loadFixtures($event);
     }
 
     /**
@@ -199,7 +208,7 @@ class Script
         };
 
         $nameValidator = function ($value) {
-            if (!preg_match('/^([0-9a-zA-Z]+)$/u', $value)) {
+            if (!preg_match('/^([0-9a-zA-Z_]+)$/u', $value)) {
                 throw new \Exception('Only this symbols 0-9 a-z A-Z "');
             }
 
@@ -207,7 +216,7 @@ class Script
         };
 
         $hostValidator = function ($value) {
-            if (!preg_match('/^([0-9a-z\.]+)*$/u', $value)) {
+            if (!preg_match('/^([0-9a-z\._]+)*$/u', $value)) {
                 throw new \Exception('Only this symbols 0-9 a-z . "');
             }
             return $value;
@@ -276,10 +285,9 @@ class Script
     }
 
     /**
-     * @param CommandEvent $event
      * @return $this
      */
-    protected function copyDefaultConfig(CommandEvent $event)
+    protected function copyDefaultConfig()
     {
         $modulePath = realpath(__DIR__ . '/../../../../');
         $defaultConfigDir = $modulePath . '/resources/defaultConfig/';
@@ -293,11 +301,6 @@ class Script
 
         $this->copyConfigFile($defaultCiDir . 'Cmf-Mail.cnf.xml', $configInjectionDir . 'Cmf-Mail.cnf.xml');
         $this->copyConfigFile($defaultCiDir . $publicResourcesName, $configInjectionDir . $publicResourcesName);
-
-        $dbConfigPath = $configInjectionDir . 'Cmf-Db.cnf.xml';
-        if ($this->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $dbConfigPath)) {
-            $this->configureDb($event, $dbConfigPath);
-        }
 
         return $this;
     }
@@ -331,6 +334,30 @@ class Script
         $f->load();
 
         $event->getIO()->write('Fixtures loaded successfully');
+
+        return $this;
+    }
+
+    /**
+     * @param CommandEvent $event
+     * @return $this
+     */
+    public function createDbConfig(CommandEvent $event)
+    {
+        $modulePath = realpath(__DIR__ . '/../../../../');
+        $defaultConfigDir = $modulePath . '/resources/defaultConfig/';
+
+        $root = getcwd() . '/';
+        $configDir = $root . 'resources/config/';
+        $this->copyConfigFile($defaultConfigDir . 'ConfigInjection.cnf.xml', $configDir . 'ConfigInjection.cnf.xml');
+
+        $configInjectionDir = $configDir . 'ConfigInjection/';
+        $defaultCiDir = $defaultConfigDir . 'ConfigInjection/';
+        $dbConfigPath = $configInjectionDir . 'Cmf-Db.cnf.xml';
+
+        if ($this->copyConfigFile($defaultCiDir . 'Cmf-Db.cnf.xml', $dbConfigPath)) {
+            $this->configureDb($event, $dbConfigPath);
+        }
 
         return $this;
     }
