@@ -349,7 +349,6 @@ class Script
 
         $root = getcwd() . '/';
         $configDir = $root . 'resources/config/';
-        $this->copyConfigFile($defaultConfigDir . 'ConfigInjection.cnf.xml', $configDir . 'ConfigInjection.cnf.xml');
 
         $configInjectionDir = $configDir . 'ConfigInjection/';
         $defaultCiDir = $defaultConfigDir . 'ConfigInjection/';
