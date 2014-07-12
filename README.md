@@ -21,11 +21,13 @@ Installation guide
         "post-install-cmd": [
             "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\Application\\Composer\\Script::updateDb",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ],
         "post-update-cmd": [
             "Cmf\\Application\\Composer\\Script::installApp",
             "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\Application\\Composer\\Script::updateDb",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ]
     }
