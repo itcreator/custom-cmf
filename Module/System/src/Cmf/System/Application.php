@@ -139,7 +139,6 @@ class Application implements EventManagerAwareInterface
      */
     public function init()
     {
-        ob_start();
         $this->initServiceManager();
         $this->initEvents();
 
@@ -226,6 +225,18 @@ class Application implements EventManagerAwareInterface
             $db = new \Cmf\Db\Doctrine();
 
             return $db->getEm(true);
+        });
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    public function resetRequest()
+    {
+        self::$serviceManager->setFactory('Request', function () {
+            return new Request();
         });
 
         return $this;
