@@ -35,7 +35,8 @@ class Html extends AbstractResponse
     {
         $view = Application::getViewProcessor();
         $layout = $view->render($this, ['content' =>$this->getContent()], '/Layout');
+        $result = $view->render($this, ['layout' => $layout]);
 
-        echo $view->render($this, ['layout' => $layout]);
+        return $result;
     }
 }

@@ -20,6 +20,7 @@ class Json extends AbstractResponse
     public function handle()
     {
         header('Content-type: application/json');
-        echo json_encode($this->renderData);
+
+        return json_encode($this->renderData);
     }
 }

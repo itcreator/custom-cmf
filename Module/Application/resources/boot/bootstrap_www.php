@@ -24,4 +24,6 @@ if ("development" == APPLICATION_MODE) {
     }
 }
 
-session_start();
+if (PHP_SESSION_NONE === session_status()) {
+    session_start();
+}

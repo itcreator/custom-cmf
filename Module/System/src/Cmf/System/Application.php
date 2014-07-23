@@ -65,7 +65,7 @@ class Application implements EventManagerAwareInterface
      */
     public function killWww()
     {
-        $host = $_SERVER['HTTP_HOST'];
+        $host = $_SERVER['SERVER_NAME'];
         if (stripos($host, 'www.') === 0) {
             $host = substr_replace($host, '', 0, 4);
             $uri = $_SERVER['REQUEST_URI'];
@@ -84,7 +84,7 @@ class Application implements EventManagerAwareInterface
     }
 
     /**
-     * @return Application
+     * @return string|null|AbstractResponse
      */
     public function dispatch()
     {
@@ -96,6 +96,7 @@ class Application implements EventManagerAwareInterface
         self::$mvcRequest = new MvcRequest($moduleName, $controllerName, $actionName);
         $response = self::$mvcRequest->send();
 
+        $result = '';
         //While response is not ready for displaying
         while (1) {
             $result = $response->handle();
@@ -109,7 +110,7 @@ class Application implements EventManagerAwareInterface
             }
         }
 
-        return $this;
+        return $result;
     }
 
     /**
@@ -150,7 +151,11 @@ class Application implements EventManagerAwareInterface
      */
     public function start()
     {
-        $this->killWww()->dispatch();
+        $response = $this->killWww()->dispatch();
+
+        if (is_string($response)) {
+            echo $response;
+        }
 
         return $this;
     }

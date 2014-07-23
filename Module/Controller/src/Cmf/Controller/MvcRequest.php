@@ -115,8 +115,19 @@ class MvcRequest
         return $this->controllerName;
     }
 
+    /**
+     * @return string
+     */
     public function getActionName()
     {
         return $this->actionName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionKey()
+    {
+        return sprintf('%s:%s:%s', $this->getModuleName(), $this->getControllerName(), $this->getActionName());
     }
 }
