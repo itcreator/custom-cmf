@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdcac6529ef15aa6ceb9875a35bbe77e",
+    "hash": "d368a1956c3a598cb3c0a9cdca6214e6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "7386b2ccb92de1b248c900a46ec616e73b2b2b8b"
+                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7386b2ccb92de1b248c900a46ec616e73b2b2b8b",
-                "reference": "7386b2ccb92de1b248c900a46ec616e73b2b2b8b",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
+                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
                 "shasum": ""
             },
             "require": {
@@ -410,7 +410,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-08-19 15:00:26"
+            "time": "2014-08-20 02:14:56"
         },
         {
             "name": "doctrine/inflector",
@@ -1528,6 +1528,7 @@
         "twitter/bootstrap": 20,
         "doctrine/data-fixtures": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.4.3"
     },
