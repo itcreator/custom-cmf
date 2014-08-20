@@ -123,10 +123,8 @@ class Script
 
         $modulePath = realpath(__DIR__ . '/../../../../');
         $resPath = $modulePath . '/resources/';
-        $scriptsPath = $resPath . 'scripts/';
 
         $this
-//            ->createSymLink($scriptsPath, $root, 'bin')
             ->createSymLink($resPath, $root, 'boot');
 
         return $this;
