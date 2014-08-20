@@ -86,7 +86,7 @@
     },
     "bin": [
         "Module/Application/resources/scripts/bin/console",
-        "Module/Application/resources/scripts/bin/server"
+        "Module/Application/resources/scripts/bin/server.php"
     ],
     "config": {
         "bin-dir": "bin"
