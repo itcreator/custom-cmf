@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0de9b443d2135926d0650ce4386fb6c",
+    "hash": "bdcac6529ef15aa6ceb9875a35bbe77e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "0db097b6c15e2e9547b1098e1caa66aa07598c3b"
+                "reference": "e93f3b718c421daddff58c4a4af1aee574472cd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/0db097b6c15e2e9547b1098e1caa66aa07598c3b",
-                "reference": "0db097b6c15e2e9547b1098e1caa66aa07598c3b",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e93f3b718c421daddff58c4a4af1aee574472cd6",
+                "reference": "e93f3b718c421daddff58c4a4af1aee574472cd6",
                 "shasum": ""
             },
             "require": {
@@ -45,17 +45,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -64,10 +53,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Docblock Annotations Parser",
@@ -77,7 +72,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-07-10 13:30:26"
+            "time": "2014-07-27 16:33:24"
         },
         {
             "name": "doctrine/cache",
@@ -85,12 +80,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "95818515f9db846b152e3df11eb40ca27e1313f7"
+                "reference": "72121e68265cd8b37f9b69778308251f6c5133e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/95818515f9db846b152e3df11eb40ca27e1313f7",
-                "reference": "95818515f9db846b152e3df11eb40ca27e1313f7",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/72121e68265cd8b37f9b69778308251f6c5133e4",
+                "reference": "72121e68265cd8b37f9b69778308251f6c5133e4",
                 "shasum": ""
             },
             "require": {
@@ -120,17 +115,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -139,10 +123,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
@@ -151,7 +141,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-07-08 17:06:17"
+            "time": "2014-08-05 12:51:19"
         },
         {
             "name": "doctrine/collections",
@@ -159,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "bbe35735af4a826c1f86b04f2fd885ff5fc0f82b"
+                "reference": "432240f56fbc9a811dbf1ff8a45c1a1047ba1c0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/bbe35735af4a826c1f86b04f2fd885ff5fc0f82b",
-                "reference": "bbe35735af4a826c1f86b04f2fd885ff5fc0f82b",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/432240f56fbc9a811dbf1ff8a45c1a1047ba1c0a",
+                "reference": "432240f56fbc9a811dbf1ff8a45c1a1047ba1c0a",
                 "shasum": ""
             },
             "require": {
@@ -190,17 +180,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -209,10 +188,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Collections Abstraction library",
@@ -222,7 +207,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-06-17 17:31:49"
+            "time": "2014-07-29 20:07:28"
         },
         {
             "name": "doctrine/common",
@@ -308,12 +293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "e847b073c2b5350045edbb40443645ad09a59538"
+                "reference": "ac36ccc812454e057aec564e0725509e74ce6b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/e847b073c2b5350045edbb40443645ad09a59538",
-                "reference": "e847b073c2b5350045edbb40443645ad09a59538",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/ac36ccc812454e057aec564e0725509e74ce6b35",
+                "reference": "ac36ccc812454e057aec564e0725509e74ce6b35",
                 "shasum": ""
             },
             "require": {
@@ -346,9 +331,7 @@
             "authors": [
                 {
                     "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
+                    "email": "jonwage@gmail.com"
                 }
             ],
             "description": "Data Fixtures for all Doctrine Object Managers",
@@ -356,7 +339,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2014-03-13 12:26:17"
+            "time": "2014-08-18 12:52:16"
         },
         {
             "name": "doctrine/dbal",
@@ -364,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f"
+                "reference": "7386b2ccb92de1b248c900a46ec616e73b2b2b8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f",
-                "reference": "8cbfefe03ff2d1a2246dfb6e98b84e4b36622e6f",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7386b2ccb92de1b248c900a46ec616e73b2b2b8b",
+                "reference": "7386b2ccb92de1b248c900a46ec616e73b2b2b8b",
                 "shasum": ""
             },
             "require": {
@@ -403,23 +386,20 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
                 }
             ],
             "description": "Database Abstraction Layer",
@@ -430,7 +410,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-07-08 17:17:49"
+            "time": "2014-08-19 15:00:26"
         },
         {
             "name": "doctrine/inflector",
@@ -567,12 +547,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "ae0ee724252b8aaf41be9b397d3db3375767095d"
+                "reference": "ff801879304dfc2bdec34222d4c03fa7bde3e4e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/ae0ee724252b8aaf41be9b397d3db3375767095d",
-                "reference": "ae0ee724252b8aaf41be9b397d3db3375767095d",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/ff801879304dfc2bdec34222d4c03fa7bde3e4e4",
+                "reference": "ff801879304dfc2bdec34222d4c03fa7bde3e4e4",
                 "shasum": ""
             },
             "require": {
@@ -611,23 +591,20 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
                 }
             ],
             "description": "Object-Relational-Mapper for PHP",
@@ -636,7 +613,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2014-07-11 19:35:34"
+            "time": "2014-08-18 20:35:52"
         },
         {
             "name": "firephp/firephp-core",
@@ -787,12 +764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "a8cc82877396aab7b028c4594dad9a4392fbf7f0"
+                "reference": "919345e2757aa3d3aca1d1ce5a8f53f65d1990ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/a8cc82877396aab7b028c4594dad9a4392fbf7f0",
-                "reference": "a8cc82877396aab7b028c4594dad9a4392fbf7f0",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/919345e2757aa3d3aca1d1ce5a8f53f65d1990ef",
+                "reference": "919345e2757aa3d3aca1d1ce5a8f53f65d1990ef",
                 "shasum": ""
             },
             "require": {
@@ -825,19 +802,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:06:26"
+            "time": "2014-08-14 16:37:29"
         },
         {
             "name": "twig/twig",
@@ -845,12 +820,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "11ea5976e38413a7a65cd2e0e2b1da9d969af513"
+                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/11ea5976e38413a7a65cd2e0e2b1da9d969af513",
-                "reference": "11ea5976e38413a7a65cd2e0e2b1da9d969af513",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/e2d2a250d963dd5bba4ad23fc01c7282fc042946",
+                "reference": "e2d2a250d963dd5bba4ad23fc01c7282fc042946",
                 "shasum": ""
             },
             "require": {
@@ -894,7 +869,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-07-07 12:54:10"
+            "time": "2014-08-06 06:46:32"
         },
         {
             "name": "twitter/bootstrap",
@@ -1099,13 +1074,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendEventManager.git",
-                "reference": "fdd8bc0e71a259aec25818d75028373ca7555892"
+                "reference": "957faa0580c40ef6bf6cf3e87a36d594042fe133"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.zendframework.com/composer/zendframework-zend-eventmanager-fdd8bc0e71a259aec25818d75028373ca7555892-zip-cbeee4.zip",
+                "url": "https://packages.zendframework.com/composer/zendframework-zend-eventmanager-957faa0580c40ef6bf6cf3e87a36d594042fe133-zip-066a28.zip",
                 "reference": "dev-master",
-                "shasum": "f9fef70d0eb447459f3263074fe6ba612b92bd34"
+                "shasum": "295d336c3e4084568bf7272487201e8f7131437e"
             },
             "require": {
                 "php": ">=5.3.23",
@@ -1132,9 +1107,9 @@
                 "zf2"
             ],
             "support": {
-                "source": "https://github.com/zendframework/Component_ZendEventManager/tree/master"
+                "source": "https://github.com/zendframework/Component_ZendEventManager/tree/release-2.3.1"
             },
-            "time": "2014-03-13 16:23:29"
+            "time": "2014-04-15 14:47:18"
         },
         {
             "name": "zendframework/zend-loader",
@@ -1340,13 +1315,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendPermissionsAcl.git",
-                "reference": "46653788bd5e28583e3a9af61745c3436175dcc1"
+                "reference": "b7a204409889a52e1439b8f7f1cf1e01cb196dd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.zendframework.com/composer/zendframework-zend-permissions-acl-46653788bd5e28583e3a9af61745c3436175dcc1-zip-548df2.zip",
+                "url": "https://packages.zendframework.com/composer/zendframework-zend-permissions-acl-b7a204409889a52e1439b8f7f1cf1e01cb196dd7-zip-50c097.zip",
                 "reference": "dev-master",
-                "shasum": "155944f1b4bc58267471c7ce8592bbf3bbe20565"
+                "shasum": "277cafd3a8ab2edd21e410a0767942f4296b45f9"
             },
             "require": {
                 "php": ">=5.3.23"
@@ -1372,9 +1347,9 @@
                 "zf2"
             ],
             "support": {
-                "source": "https://github.com/zendframework/Component_ZendPermissionsAcl/tree/master"
+                "source": "https://github.com/zendframework/Component_ZendPermissionsAcl/tree/release-2.3.1"
             },
-            "time": "2014-03-13 16:23:48"
+            "time": "2014-04-15 14:47:18"
         },
         {
             "name": "zendframework/zend-servicemanager",
@@ -1542,12 +1517,8 @@
             "time": "2014-03-13 16:23:57"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "doctrine/orm": 20,
@@ -1560,7 +1531,5 @@
     "platform": {
         "php": ">=5.4.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
