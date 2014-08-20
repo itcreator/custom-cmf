@@ -83,5 +83,12 @@
             "Cmf\\Application\\Composer\\Script::updateDb",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ]
+    },
+    "bin": [
+        "Module/Application/resources/scripts/bin/console",
+        "Module/Application/resources/scripts/bin/server"
+    ],
+    "config": {
+        "bin-dir": "bin"
     }
 }

@@ -126,7 +126,7 @@ class Script
         $scriptsPath = $resPath . 'scripts/';
 
         $this
-            ->createSymLink($scriptsPath, $root, 'bin')
+//            ->createSymLink($scriptsPath, $root, 'bin')
             ->createSymLink($resPath, $root, 'boot');
 
         return $this;
