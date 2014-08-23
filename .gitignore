@@ -1,6 +1,7 @@
 /.idea
-/bin/doctrine.php
 /bin/doctrine
+/bin/doctrine.php
+/bin/doctrine-dbal
 /boot
 /public
 /resources
