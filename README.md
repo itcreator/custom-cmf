@@ -30,6 +30,9 @@ Installation guide
             "Cmf\\Application\\Composer\\Script::updateDb",
             "Cmf\\PublicResources\\Composer\\Script::installAssets"
         ]
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }
 ```
