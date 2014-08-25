@@ -10,6 +10,7 @@ namespace Cmf\Captcha\Controller;
 
 use Cmf\Captcha\Captcha;
 use Cmf\Controller\AbstractController;
+use Cmf\Controller\Response\Image;
 use Cmf\System\Application;
 
 /**
@@ -21,7 +22,7 @@ class CaptchaController extends AbstractController
 {
     /**
      * @param Captcha $captcha
-     * @return void
+     * @return Image
      */
     public function buildImage(Captcha $captcha)
     {
@@ -130,25 +131,22 @@ class CaptchaController extends AbstractController
         imagecopyresampled($im1, $im, 0, 0, 0, 0, $width * $k, $height * $k, $width, $height);
         imagecopyresampled($im2, $im1, 0, 0, 0, 0, $width, $height, $width * $k, $height * $k);
 
-        //generation of a image
-        header("Content-type: image/png");
-        imagepng($im1);
-
+        $response = new Image($this, ['image' => $im1]);
         //clear memory
         imagedestroy($im4);
         imagedestroy($im3);
         imagedestroy($im2);
-        imagedestroy($im1);
         imagedestroy($im);
+
+        return $response;
     }
 
     public function defaultAction()
     {
         $captcha = new Captcha();
         $captcha->generateCode();
-        $this->buildImage($captcha);
+        $response = $this->buildImage($captcha);
 
-        //TODO: make MVC response for images
-        die;
+        return $response;
     }
 }
