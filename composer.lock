@@ -4,8 +4,48 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d368a1956c3a598cb3c0a9cdca6214e6",
+    "hash": "2456aeb97935dac34d72208b836e9daf",
     "packages": [
+        {
+            "name": "behat/transliterator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2014-05-15 22:08:22"
+        },
         {
             "name": "doctrine/annotations",
             "version": "dev-master",
@@ -272,7 +312,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -347,12 +387,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c"
+                "reference": "1c9c24a7e2295b71249ae2a719ce38861fccd551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
-                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1c9c24a7e2295b71249ae2a719ce38861fccd551",
+                "reference": "1c9c24a7e2295b71249ae2a719ce38861fccd551",
                 "shasum": ""
             },
             "require": {
@@ -410,7 +450,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-08-20 02:14:56"
+            "time": "2014-08-24 01:25:05"
         },
         {
             "name": "doctrine/inflector",
@@ -449,7 +489,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -468,9 +508,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -529,7 +569,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -547,12 +587,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "ff801879304dfc2bdec34222d4c03fa7bde3e4e4"
+                "reference": "65f8357b46cf247405ca4bb5bf348e0ffc67854b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/ff801879304dfc2bdec34222d4c03fa7bde3e4e4",
-                "reference": "ff801879304dfc2bdec34222d4c03fa7bde3e4e4",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/65f8357b46cf247405ca4bb5bf348e0ffc67854b",
+                "reference": "65f8357b46cf247405ca4bb5bf348e0ffc67854b",
                 "shasum": ""
             },
             "require": {
@@ -613,46 +653,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2014-08-18 20:35:52"
-        },
-        {
-            "name": "firephp/firephp-core",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/firephp/firephp-core.git",
-                "reference": "844348ed1a1c93bc76a4ffae62d08bb2543d027d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/firephp/firephp-core/zipball/844348ed1a1c93bc76a4ffae62d08bb2543d027d",
-                "reference": "844348ed1a1c93bc76a4ffae62d08bb2543d027d",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "lib/FirePHPCore/FirePHP.class.php",
-                    "lib/FirePHPCore/fb.php"
-                ],
-                "files": [
-                    "lib/FirePHPCore/fb.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christoph Dorn",
-                    "email": "christoph@christophdorn.com",
-                    "homepage": "http://christophdorn.com"
-                }
-            ],
-            "description": "Traditional FirePHPCore library for sending PHP variables to the browser.",
-            "homepage": "https://github.com/firephp/firephp-core",
-            "time": "2014-07-10 06:05:03"
+            "time": "2014-08-22 12:00:20"
         },
         {
             "name": "frameworks/jquery",
@@ -683,15 +684,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe"
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
-                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/54af483e293e3f00fd4173b23d9dabdd8c30e33e",
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e",
                 "shasum": ""
             },
             "require": {
+                "behat/transliterator": "~1.0",
                 "doctrine/common": "~2.2",
                 "php": ">=5.3.2"
             },
@@ -755,7 +757,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2014-06-06 09:08:07"
+            "time": "2014-08-21 01:13:59"
         },
         {
             "name": "symfony/console",
@@ -1522,7 +1524,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "doctrine/orm": 20,
-        "firephp/firephp-core": 20,
         "frameworks/jquery": 20,
         "gedmo/doctrine-extensions": 20,
         "twitter/bootstrap": 20,

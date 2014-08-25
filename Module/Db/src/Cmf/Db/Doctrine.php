@@ -10,7 +10,6 @@
 namespace Cmf\Db;
 
 use Cmf\System\Application;
-use Cmf\Debug\Database\FirePhpLogger;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\ORM\Configuration;
@@ -70,8 +69,7 @@ class Doctrine
     {
         //logger
         if ('development' == APPLICATION_MODE) {
-            $logger = new FirePhpLogger();
-            $config->setSQLLogger($logger);
+//            $config->setSQLLogger($logger);
         }
 
         return $this;
