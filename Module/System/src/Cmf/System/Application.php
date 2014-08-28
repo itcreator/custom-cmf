@@ -22,6 +22,7 @@ use Cmf\Standard\TSingleton;
 use Cmf\Url\UrlBuilder;
 
 use Cmf\User\Auth;
+use Cmf\View\Helper\HelperFactory;
 use Cmf\View\ViewProcessor;
 use Composer\Autoload\ClassLoader;
 use Doctrine\ORM\EntityManager;
@@ -56,7 +57,7 @@ class Application implements EventManagerAwareInterface
     protected static $serviceManager;
 
     /** @var \Cmf\Controller\MvcRequest */
-    protected static $mvcRequest;
+    protected $mvcRequest;
 
     /**
      * Redirect from www.hostname to hostname
@@ -93,22 +94,32 @@ class Application implements EventManagerAwareInterface
         $controllerName = self::getRequest()->get('controller', Request::TYPE_GET, $config->defaultController);
         $actionName = self::getRequest()->get('action', Request::TYPE_GET, $config->defaultAction);
 
-        self::$mvcRequest = new MvcRequest($moduleName, $controllerName, $actionName);
-        $response = self::$mvcRequest->send();
+        $this->mvcRequest = new MvcRequest($moduleName, $controllerName, $actionName);
+        $response = $this->mvcRequest->send();
 
         $result = '';
         //While response is not ready for displaying
         while (1) {
             $result = $response->handle();
             if ($result instanceof MvcRequest) {
-                self::$mvcRequest = $result;
-                $response = self::$mvcRequest->send();
+                $this->mvcRequest = $result;
+                $response = $this->mvcRequest->send();
             } elseif ($result instanceof AbstractResponse) {
                 $response = $result;
             } else {
                 break;
             }
         }
+
+        $this->mvcRequest = null;
+
+        self::getRequest()->clear();
+        //TODO: move cleaning
+        HelperFactory::getMeta()->clear();
+        HelperFactory::getJS()->clear();
+        HelperFactory::getStyle()->clear();
+        HelperFactory::getTitle()->clear();
+        HelperFactory::getMessageBox()->clear();
 
         return $result;
     }
@@ -264,9 +275,9 @@ class Application implements EventManagerAwareInterface
     /**
      * @return MvcRequest
      */
-    public static function getMvcRequest()
+    public function getMvcRequest()
     {
-        return self::$mvcRequest;
+        return $this->mvcRequest;
     }
 
     /**

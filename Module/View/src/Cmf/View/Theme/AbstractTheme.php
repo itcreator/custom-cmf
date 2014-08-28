@@ -91,7 +91,7 @@ abstract class AbstractTheme
         $path = $object;
         $key = $path . $postfix;
 
-        $actionKey = Application::getMvcRequest()->getActionKey();
+        $actionKey = Application::getInstance()->getMvcRequest()->getActionKey();
         if (empty($this->paths[$actionKey])) {
             $this->paths[$actionKey] = [];
         }
