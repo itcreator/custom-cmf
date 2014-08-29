@@ -22,6 +22,7 @@ use Cmf\Standard\TSingleton;
 use Cmf\Url\UrlBuilder;
 
 use Cmf\User\Auth;
+use Cmf\View\Helper\HelperFactory;
 use Cmf\View\ViewProcessor;
 use Composer\Autoload\ClassLoader;
 use Doctrine\ORM\EntityManager;
@@ -56,7 +57,7 @@ class Application implements EventManagerAwareInterface
     protected static $serviceManager;
 
     /** @var \Cmf\Controller\MvcRequest */
-    protected static $mvcRequest;
+    protected $mvcRequest;
 
     /**
      * Redirect from www.hostname to hostname
@@ -65,7 +66,7 @@ class Application implements EventManagerAwareInterface
      */
     public function killWww()
     {
-        $host = $_SERVER['HTTP_HOST'];
+        $host = $_SERVER['SERVER_NAME'];
         if (stripos($host, 'www.') === 0) {
             $host = substr_replace($host, '', 0, 4);
             $uri = $_SERVER['REQUEST_URI'];
@@ -84,7 +85,7 @@ class Application implements EventManagerAwareInterface
     }
 
     /**
-     * @return Application
+     * @return string|null|AbstractResponse
      */
     public function dispatch()
     {
@@ -93,15 +94,16 @@ class Application implements EventManagerAwareInterface
         $controllerName = self::getRequest()->get('controller', Request::TYPE_GET, $config->defaultController);
         $actionName = self::getRequest()->get('action', Request::TYPE_GET, $config->defaultAction);
 
-        self::$mvcRequest = new MvcRequest($moduleName, $controllerName, $actionName);
-        $response = self::$mvcRequest->send();
+        $this->mvcRequest = new MvcRequest($moduleName, $controllerName, $actionName);
+        $response = $this->mvcRequest->send();
 
+        $result = '';
         //While response is not ready for displaying
         while (1) {
             $result = $response->handle();
             if ($result instanceof MvcRequest) {
-                self::$mvcRequest = $result;
-                $response = self::$mvcRequest->send();
+                $this->mvcRequest = $result;
+                $response = $this->mvcRequest->send();
             } elseif ($result instanceof AbstractResponse) {
                 $response = $result;
             } else {
@@ -109,7 +111,17 @@ class Application implements EventManagerAwareInterface
             }
         }
 
-        return $this;
+        $this->mvcRequest = null;
+
+        self::getRequest()->clear();
+        //TODO: move cleaning
+        HelperFactory::getMeta()->clear();
+        HelperFactory::getJS()->clear();
+        HelperFactory::getStyle()->clear();
+        HelperFactory::getTitle()->clear();
+        HelperFactory::getMessageBox()->clear();
+
+        return $result;
     }
 
     /**
@@ -138,7 +150,6 @@ class Application implements EventManagerAwareInterface
      */
     public function init()
     {
-        ob_start();
         $this->initServiceManager();
         $this->initEvents();
 
@@ -150,7 +161,11 @@ class Application implements EventManagerAwareInterface
      */
     public function start()
     {
-        $this->killWww()->dispatch();
+        $response = $this->killWww()->dispatch();
+
+        if (is_string($response)) {
+            echo $response;
+        }
 
         return $this;
     }
@@ -227,6 +242,18 @@ class Application implements EventManagerAwareInterface
     }
 
     /**
+     * @return $this
+     */
+    public function resetRequest()
+    {
+        self::$serviceManager->setFactory('Request', function () {
+            return new Request();
+        });
+
+        return $this;
+    }
+
+    /**
      * @return ServiceManager
      */
     public function getServiceManager()
@@ -248,9 +275,9 @@ class Application implements EventManagerAwareInterface
     /**
      * @return MvcRequest
      */
-    public static function getMvcRequest()
+    public function getMvcRequest()
     {
-        return self::$mvcRequest;
+        return $this->mvcRequest;
     }
 
     /**

@@ -24,7 +24,6 @@
             "Cmf\\Data\\": "Module/Data/src/",
             "Cmf\\DataFixture\\": "Module/DataFixture/src/",
             "Cmf\\Db\\": "Module/Db/src/",
-            "Cmf\\Debug\\": "Module/Debug/src/",
             "Cmf\\Error\\": "Module/Error/src/",
             "Cmf\\Event\\": "Module/Event/src/",
             "Cmf\\Form\\": "Module/Form/src/",
@@ -48,7 +47,6 @@
     "require": {
         "php": ">=5.4.3",
         "doctrine/orm": "2.5.*@dev",
-        "firephp/firephp-core": "dev-master",
         "frameworks/jquery": "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
         "twig/twig": "1.*",

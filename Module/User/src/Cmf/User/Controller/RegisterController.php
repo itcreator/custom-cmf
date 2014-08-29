@@ -54,7 +54,7 @@ class RegisterController extends AbstractController
             'idUser' => $user->getId(),
         ]);
 
-        $activationUrl = 'http://' . $_SERVER['HTTP_HOST'] . $url;
+        $activationUrl = 'http://' . $_SERVER['SERVER_NAME'] . $url;
 
         $config = Application::getConfigManager()->loadForModule('Cmf\System', 'site');
         $data = [

@@ -22,7 +22,7 @@ class Error403Controller extends AbstractController
     public function defaultAction()
     {
         $lng = \Cmf\Language\Factory::get($this);
-        $msg = sprintf('%s 403. %s.', $lng['error'], $lng['pageNotFound']);
+        $msg = sprintf('%s 403. %s.', $lng['error'], $lng['forbidden']);
 
         HelperFactory::getTitle()->setTitle($msg);
         HelperFactory::getMeta()->addTag('keywords', $msg);

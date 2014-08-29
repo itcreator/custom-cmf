@@ -87,21 +87,27 @@ abstract class AbstractTheme
         if (is_object($object)) {
             $object = get_class($object);
         }
+        //todo: add controller/action key
         $path = $object;
         $key = $path . $postfix;
 
-        if (isset($this->paths[$key])) {
-            return $this->paths[$key];
+        $actionKey = Application::getInstance()->getMvcRequest()->getActionKey();
+        if (empty($this->paths[$actionKey])) {
+            $this->paths[$actionKey] = [];
+        }
+
+        if (isset($this->paths[$actionKey][$key])) {
+            return $this->paths[$actionKey][$key];
         }
 
         if (false !== $result = $this->searchForCurrentModule($object, $postfix)) {
-            $this->paths[$key] = $result;
+            $this->paths[$actionKey][$key] = $result;
         } elseif (false !== $result = $this->searchIterative($object, $postfix)) {
-            $this->paths[$key] = $result;
+            $this->paths[$actionKey][$key] = $result;
         } else {
-            $this->paths[$key] = false;
+            $this->paths[$actionKey][$key] = false;
         }
 
-        return $this->paths[$key];
+        return $this->paths[$actionKey][$key];
     }
 }
