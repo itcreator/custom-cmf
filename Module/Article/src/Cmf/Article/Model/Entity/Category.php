@@ -19,7 +19,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
  *
  * @ORM\Table(name="article_category")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Cmf\Category\Model\Repository\CategoryRepository")
  * @Gedmo\Tree(type="materializedPath")
  */
 class Category extends \Cmf\Category\Model\Entity\Category

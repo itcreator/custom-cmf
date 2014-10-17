@@ -10,6 +10,7 @@
 namespace Cmf\Article\DataFixture;
 
 use Cmf\Article\Model\Entity\Comment;
+use Cmf\Comment\Model\Repository\CommentRepository;
 use Cmf\System\Application;
 use Cmf\User\Model\Entity\User;
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -37,7 +38,9 @@ class InitCommentRoot extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $em = Application::getEntityManager();
-        $isInitialized = $em->getRepository('Cmf\Article\Model\Entity\Comment')->findOneBy([]);
+        /** @var CommentRepository $rep */
+        $rep = $em->getRepository('Cmf\Article\Model\Entity\Comment');
+        $isInitialized = $rep->getRootNodes();
 
         if (!$isInitialized) {
             $root = new Comment();

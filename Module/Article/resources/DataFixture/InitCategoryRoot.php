@@ -10,6 +10,7 @@
 namespace Cmf\Article\DataFixture;
 
 use Cmf\Article\Model\Entity\Category;
+use Cmf\Category\Model\Repository\CategoryRepository;
 use Cmf\System\Application;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -27,7 +28,9 @@ class InitCategoryRoot implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $em = Application::getEntityManager();
-        $isInitialized = $em->getRepository('Cmf\Article\Model\Entity\Category')->findOneBy([]);
+        /** @var CategoryRepository $rep */
+        $rep = $em->getRepository('Cmf\Article\Model\Entity\Category');
+        $isInitialized = $rep->getRootNodes();
 
         if (!$isInitialized) {
             $root = new Category();
