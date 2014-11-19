@@ -147,8 +147,8 @@ class Doctrine
     {
         $typesConf = Application::getConfigManager()->loadForModule('Cmf\Db', 'type');
 
-        foreach ($typesConf as $name => $className) {
-            Type::addType($name, $className);
+        foreach ($typesConf as $name => $itemConf) {
+            Type::addType($name, $itemConf->class);
         }
 
         return $this;
