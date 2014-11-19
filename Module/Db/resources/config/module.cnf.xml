@@ -18,6 +18,12 @@
             <class>Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter</class>
         </gedmo-soft-deleteable>
     </filter>
+    <type>
+        <!-- Example -->
+        <!--<enum>-->
+        <!--<class>Namespace\EnumTYpe</class>-->
+        <!--</enum>-->
+    </type>
     <eventListener>
         <gedmo-sluggable>
             <class>Gedmo\Sluggable\SluggableListener</class>

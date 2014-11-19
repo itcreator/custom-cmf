@@ -12,9 +12,10 @@ namespace Cmf\Db;
 use Cmf\System\Application;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\Common\Cache\ArrayCache;
+use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
-use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Mapping\Driver\DriverChain;
 
@@ -88,7 +89,6 @@ class Doctrine
         return self::$em;
     }
 
-
     /**
      * @param bool $reload
      * @return $this
@@ -133,7 +133,23 @@ class Doctrine
         $evm = $this->initExtensions($cachedAnnotationReader, $driverChain);
         self::$em = EntityManager::create($this->getConnectionOptions(), $config, $evm);
 
-        $this->initFilters($config);
+        $this
+            ->initFilters($config)
+            ->initTypes($config);
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function initTypes()
+    {
+        $typesConf = Application::getConfigManager()->loadForModule('Cmf\Db', 'type');
+
+        foreach ($typesConf as $name => $className) {
+            Type::addType($name, $className);
+        }
 
         return $this;
     }
