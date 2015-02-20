@@ -9,7 +9,7 @@
 
 namespace Cmf\Component\Grid\Table;
 
-use Cmf\Structure\Collection\SimpleCollection;
+use Cmf\Structure\Collection\AssociateCollection;
 use Cmf\System\Application;
 use Cmf\System\Sort;
 
@@ -20,19 +20,19 @@ use Cmf\System\Sort;
  */
 class Header
 {
-    /** @var SimpleCollection */
+    /** @var AssociateCollection */
     protected $fields;
 
     /**
-     * @param SimpleCollection $fields
+     * @param AssociateCollection $fields
      */
-    public function __construct(SimpleCollection $fields)
+    public function __construct(AssociateCollection $fields)
     {
         $this->fields = $fields;
     }
 
     /**
-     * @return SimpleCollection
+     * @return AssociateCollection
      */
     public function getFields()
     {

@@ -11,7 +11,7 @@ namespace Cmf\Component\Grid;
 
 use Cmf\Component\ActionLink\AbstractConfig;
 use Cmf\Component\Field\AbstractFieldConfig;
-use Cmf\Structure\Collection\LazyCollection;
+use Cmf\Structure\Collection\LazyAssociateCollection;
 
 /**
  * Table
@@ -43,14 +43,14 @@ class Table
         $actionLinksConfig = $params['actionLinks'];
         /** @var AbstractFieldConfig $fields */
         $fields = $params['fields'];
-        $initHeader = function (LazyCollection $headerFields) use ($fields, $actionLinksConfig) {
+        $initHeader = function (LazyAssociateCollection $headerFields) use ($fields, $actionLinksConfig) {
             $headerFields->setItems($fields->getConfig(true));
             if ($actionLinksConfig instanceof AbstractConfig) {
                 $linkConfig = $actionLinksConfig->getConfig();
                 $headerFields->setItem(['title' => $linkConfig['title']]);
             }
         };
-        $this->header = new Table\Header(new LazyCollection($initHeader));
+        $this->header = new Table\Header(new LazyAssociateCollection($initHeader));
 
         $idField = isset($params['idField']) ? $params['idField'] : [];
 
