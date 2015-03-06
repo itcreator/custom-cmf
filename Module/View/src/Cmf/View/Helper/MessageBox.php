@@ -12,11 +12,12 @@ namespace Cmf\View\Helper;
 use Cmf\Structure\Collection\SimpleCollection;
 use Cmf\System\Application;
 use Cmf\System\Message;
+use Cmf\View\Render\ManualRenderInterface;
 
 /**
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
  */
-class MessageBox extends AbstractHelper
+class MessageBox extends AbstractHelper implements ManualRenderInterface
 {
     /** @var SimpleCollection */
     protected $messages;

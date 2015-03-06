@@ -11,13 +11,14 @@ namespace Cmf\Component\Html\Attribute;
 
 use Cmf\Form\Element\AbstractElement;
 use Cmf\Structure\Collection\AssociateCollection;
+use Cmf\View\Render\ManualRenderInterface;
 
 use Doctrine\ORM\EntityNotFoundException;
 
 /**
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
  */
-class AttributeCollection extends AssociateCollection
+class AttributeCollection extends AssociateCollection implements ManualRenderInterface
 {
     /** @var AbstractElement|null */
     protected $formElement;

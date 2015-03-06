@@ -10,6 +10,7 @@
 namespace Cmf\View\Engine\Twig;
 
 use Cmf\System\Application;
+use Cmf\View\Render\ManualRenderInterface;
 
 /**
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
@@ -29,7 +30,7 @@ class Extension extends \Twig_Extension
         }
 
         $result = null;
-        if (is_object($object) && method_exists($object, 'render')) {
+        if (is_object($object) && ($object instanceof ManualRenderInterface)) {
             $result = $object->render();
         }
 

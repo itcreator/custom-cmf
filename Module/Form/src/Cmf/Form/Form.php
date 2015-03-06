@@ -18,11 +18,12 @@ use Cmf\Structure\Collection\Ordered\OrderedCollection;
 use Cmf\Structure\Collection\SimpleCollection;
 use Cmf\System\Application;
 use Cmf\System\Message;
+use Cmf\View\Render\ManualRenderInterface;
 
 /**
  * @author Vital Leshchyk <vitalleshchyk@gmail.com>
  */
-class Form extends AbstractElement
+class Form extends AbstractElement implements ManualRenderInterface
 {
     /**
      * Name for hidden form element
